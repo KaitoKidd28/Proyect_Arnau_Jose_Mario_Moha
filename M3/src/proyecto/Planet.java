@@ -2,6 +2,7 @@ package proyecto;
 
 import java.util.ArrayList;
 
+
 public class Planet {
 	private int technologyDefense;
 	private int technologyAtack;
@@ -15,8 +16,8 @@ public class Planet {
 			int upgradeDefenseTechnologyDeuteriumCost, int upgradeAttackTechnologyDeuteriumCost,
 			ArrayList<MilitaryUnit>[] army) {
 		super();
-		this.technologyDefense = technologyDefense;
-		this.technologyAtack = technologyAtack;
+		this.technologyDefense = 1;
+		this.technologyAtack = 1;
 		this.metal = metal;
 		this.deuterium = deuterium;
 		this.upgradeDefenseTechnologyDeuteriumCost = upgradeDefenseTechnologyDeuteriumCost;
@@ -80,15 +81,37 @@ public class Planet {
 		this.army = army;
 	}
 	
-	public void upgradeTechnologyDefense(int upgradeDefenseTechnologyDeuteriumCost, int deuterium) {
+	public void upgradeTechnologyDefense(int upgradeDefenseTechnologyDeuteriumCost, int deuterium) throws ResourceException {
 		try {
-			if (deuterium >= upgradeDefenseTechnologyDeuteriumCost) {
-				
+			if (deuterium >= upgradeDefenseTechnologyDeuteriumCost
+					) {
+				this.technologyDefense += 1;
+				this.deuterium -= upgradeDefenseTechnologyDeuteriumCost;
+				this.upgradeDefenseTechnologyDeuteriumCost *= 1.10;
+			}
+			else {
+				throw new ResourceException("No tienes suficiente deuterium");
 			}
 		}
-		finally {
-			
+		finally {}
+	}
+	
+	public void upgradeTechnologyAttack(int upgradeAttackTechnologyDeuteriumCost, int deuterium) throws ResourceException {
+		try {
+			if (deuterium >= upgradeAttackTechnologyDeuteriumCost) {
+				this.technologyAtack += 1;
+				this.deuterium -= upgradeAttackTechnologyDeuteriumCost;
+				this.upgradeAttackTechnologyDeuteriumCost *= 1.10;
+			}
+			else {
+				throw new ResourceException("No tienes suficiente deuterium");
+			}
 		}
+		finally {}
+	}
+	
+	public void printStats(int technologyAtack, int technologyDefense) {
+		
 	}
 	
 }
