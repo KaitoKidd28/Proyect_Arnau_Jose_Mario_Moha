@@ -10,10 +10,10 @@ public class OracleJavaJDBC {
 	public static void main(String[] args) throws SQLException {
 		Connection conn = null;
 		Statement stmt = null;
-		String DB_URL = "jdbc:oracle:thin:@http://localhost:8080:orcl";
+		String DB_URL = "jdbc:oracle:thin:@http://localhost:1521:orcl";
 		String USER = "system";
 		String PASS = "admin";
-		// Creating Connection
+		
 		try {
 			conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
@@ -23,16 +23,14 @@ public class OracleJavaJDBC {
 			} else {
 				System.out.println("Failed to make connection!");
 			}
-			
+		
 		} catch (SQLException e) {
 			System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			// close the connection & statement object
 			stmt.close();
 			conn.close();
 		}
-
 	}
 }
