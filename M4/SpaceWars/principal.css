@@ -13,7 +13,8 @@ body {
 
 /* Encabezado */
 header {
-    background: radial-gradient(circle, #000000 10%, transparent 60%), #000000;
+    background-image: url('imgs/fondo_encabezado.jpg'); 
+    background-size: cover;
     color: #fff;
     padding: 10px 20px;
     position: fixed;
@@ -42,6 +43,12 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    transition: background-color 0.3s; 
+}
+
+/* Cambio de color al pasar el cursor */
+nav ul li:hover a {
+    background-color: rgba(0, 17, 253, 0.582); 
 }
 
 .logo {
@@ -88,7 +95,7 @@ footer {
     margin-left: 1%;
     margin-right: 1%;
     transform: translateY(-50%); /* Alinea verticalmente el cohete */
-    width: 50px; /* Ancho de la imagen */
+    width: 45px; /* Ancho de la imagen */
     height: auto; /* Altura ajustada automáticamente */
     animation: moveRocket 5s infinite linear; /* Animación del cohete */
 }
