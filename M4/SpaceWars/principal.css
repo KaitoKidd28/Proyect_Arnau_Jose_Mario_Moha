@@ -25,7 +25,7 @@ header {
 }
 
 nav {
-    margin-left: auto; /* Mueve el menú a la derecha */
+    margin-left: auto; 
 }
 
 nav ul {
@@ -53,8 +53,8 @@ nav ul li a {
 
 /* Contenido principal */
 main {
-    margin-top: 100px; 
-    padding: 20px;
+    padding-top: 80px; 
+    position: relative; 
 }
 
 section {
@@ -76,6 +76,33 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+.title {
+    display: flex; 
+    justify-content: center;
+}
+
+.rocket {
+    margin-top: 3%;
+    margin-left: 1%;
+    margin-right: 1%;
+    transform: translateY(-50%); /* Alinea verticalmente el cohete */
+    width: 50px; /* Ancho de la imagen */
+    height: auto; /* Altura ajustada automáticamente */
+    animation: moveRocket 5s infinite linear; /* Animación del cohete */
+}
+
+@keyframes moveRocket {
+    0% {
+        transform: translateY(-50%) rotate(0);
+    }
+    50% {
+        transform: translateY(-50%) rotate(180deg);
+    }
+    100% {
+        transform: translateY(-50%) rotate(360deg);
+    }
 }
 
 
