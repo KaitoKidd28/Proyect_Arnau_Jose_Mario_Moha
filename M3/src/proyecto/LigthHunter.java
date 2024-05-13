@@ -49,6 +49,18 @@ public class LigthHunter extends Ship {
 		// TODO Auto-generated method stub
 		
 	}
+
+	public LigthHunter(int armor, int baseDamage, int technologyDefense, int technologyAtack, int initialArmor) {
+		super(armor, baseDamage);
+		armor = ARMOR_LIGTHHUNTER + ((technologyDefense * PLUS_ARMOR_LIGTHHUNTER_BY_TECHNOLOGY) * ARMOR_LIGTHHUNTER / 100);
+		baseDamage = BASE_DAMAGE_LIGTHHUNTER + ((technologyAtack * PLUS_ATTACK_LIGTHHUNTER_BY_TECHNOLOGY) * BASE_DAMAGE_LIGTHHUNTER / 100);
+		initialArmor = armor;
+	}
+	
+	public LigthHunter() {
+		
+	}
+	
 	
 	
 	
