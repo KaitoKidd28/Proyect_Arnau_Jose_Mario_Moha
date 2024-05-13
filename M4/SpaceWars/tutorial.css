@@ -26,18 +26,18 @@ header {
 }
 
 nav {
-    margin-left: 75%; 
+    margin-left: auto; 
 }
 
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    width: 120%;
 }
+
 nav ul li {
     display: inline;
-    margin-right: auto;
+    margin-right: 20px;
 }
 
 nav ul li a {
@@ -48,8 +48,6 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #ffcc00; 
-    border: 1px solid #ffcc00;
-    padding:  3%;
 }
 
 
@@ -65,23 +63,16 @@ nav ul li a:hover {
 main {
     padding-top: 80px; 
     position: relative; 
-    background-color: gray;
-    border-radius: 20px;
-    padding: 4%;
-    padding-top: 8%;
 }
 
 section {
     margin-bottom: 20px;
 }
 
+/* Título de la página */
 h1 {
-    font-size: 48px;
-    background-image: url('imgs/agujero.webp'); 
-    background-position: center;
-    background-clip: text; 
-    color: transparent; 
-    text-align: center;
+    text-align: center; 
+    font-size: 3em; 
 }
 
 /* Pie de página */
@@ -97,7 +88,6 @@ footer {
 .title {
     display: flex; 
     justify-content: center;
-    color: white;
 }
 
 .rocket {
@@ -109,7 +99,6 @@ footer {
     height: auto; 
     animation: moveRocket 5s infinite linear; 
 }
-
 
 @keyframes moveRocket {
     0% {
