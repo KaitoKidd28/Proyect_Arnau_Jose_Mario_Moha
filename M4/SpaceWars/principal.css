@@ -32,13 +32,14 @@ nav {
 
 nav ul {
     list-style-type: none;
-    margin: 0;
+    margin: 15px;
     padding: 0;
     width: 150%;
 }
 nav ul li {
     display: inline;
     margin-right: 1%;
+    padding-left: 10%;
 }
 
 nav ul li a {
@@ -49,7 +50,6 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #ffcc00; 
-    padding:  3%;
 }
 
 
@@ -60,43 +60,6 @@ nav ul li a:hover {
     border-radius: 50%;
 }
 
-button{
-    background:rgba(0, 0, 0, 0.526);
-    color:#ffffff;
-    border:none;
-    position:relative;
-    height:25px;
-    font-size:1em;
-    padding:0 2em;
-    cursor:pointer;
-    transition:800ms ease all;
-    outline:none;
-    list-style-type: none;
-  }
-  button:hover{
-    background:#7c47d2;
-    color:#000000;
-  }
-  button:before,button:after{
-    content:'';
-    position:absolute;
-    top:0;
-    right:0;
-    height:2px;
-    width:0;
-    background: #111a77;
-    transition:400ms ease all;
-  }
-  button:after{
-    right:inherit;
-    top:inherit;
-    left:0;
-    bottom:0;
-  }
-  button:hover:before,button:hover:after{
-    width: 50%;
-    transition:800ms ease all;
-  }
 
 /* Contenido principal */
 main {
@@ -124,11 +87,57 @@ section {
     padding: 10px; 
 }
 
+.izquierda {
+    flex: 2; 
+}
+
+.derecha {
+    flex: 1; 
+}
+
 .imagen-columna {
     max-width: 100%; 
     height: auto; 
+
+}
+.section3 {
+    display: flex; 
+    background-image: url("imgs/fondo_encabezado.jpg");
+    background-size: cover;
+    padding: 10%;
+    box-sizing: border-box;
+    justify-content: center; 
+    align-items: center;
+}
+
+.button {
+    border: none; 
+    color: white; 
+    padding: 14px 28px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    display: inline-block;
+    margin: 5px;
+    text-align: center;
+    height: 130px;
+    width: 250px;
+}
+.button-container {
+    text-align: center; 
     
 }
+
+.primary {background-image: linear-gradient(to right, #5500cc, #ffffff);
+    text-align: center;
+    height: 70px;
+    width: 170px;
+    border-radius: 5px;
+    font-size: 20px;
+
+} 
+.primary:hover {background-image: url("imgs/fondo_github.jpeg");
+}
+
 
 h1 {
     font-size: 60px;
