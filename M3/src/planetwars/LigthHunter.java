@@ -11,21 +11,15 @@ public class LigthHunter extends Ship{
 	private static final int PLUS_ATTACK_LIGTHHUNTER_BY_TECHNOLOGY = 10;
 	
 	// Primer constructor
-	public LigthHunter(int armor, int baseDamage, int technologyLevel) {
+	public LigthHunter(int armor, int baseDamage) {
 		super(armor, baseDamage);
 		// Esto de squi calcula la armadura basandose en la tecnologia de defensa.
-		int armorWithTechnology = ARMOR_LIGTHHUNTER + (technologyLevel * PLUS_ARMOR_LIGTHHUNTER_BY_TECHNOLOGY * ARMOR_LIGTHHUNTER)/100;
-		
-		// Esto calcula el daño base basandose en la tecnología de ataque.
-		int baseDamageWithTechnology = BASE_DAMAGE_LIGTHHUNTER + (technologyLevel * PLUS_ATTACK_LIGTHHUNTER_BY_TECHNOLOGY * BASE_DAMAGE_LIGTHHUNTER)/100;
-		setArmor(armorWithTechnology);
-        setInitialArmor(armorWithTechnology);
-        setBaseDamage(baseDamageWithTechnology);
 	}
 	
-	// Segundo contructo r
-	public LigthHunter() {
-		this(ARMOR_LIGTHHUNTER, BASE_DAMAGE_LIGTHHUNTER, 0);
-	}
+	// Segundo contructor
+    public LigthHunter() {
+        this(ARMOR_LIGTHHUNTER, BASE_DAMAGE_LIGTHHUNTER);
+    }
+
 	
 }

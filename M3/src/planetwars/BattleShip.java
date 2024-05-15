@@ -23,9 +23,6 @@ public class BattleShip extends Ship{
         setBaseDamage(baseDamageWithTechnology);
 	}
 	
-	// Segundo contructo r
-	public BattleShip() {
-		this(ARMOR_LIGTHHUNTER, BASE_DAMAGE_LIGTHHUNTER, 0);
-	}
+	
 
 }

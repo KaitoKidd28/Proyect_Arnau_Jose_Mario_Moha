@@ -2,7 +2,7 @@ package planetwars;
 
 import java.util.ArrayList;
 
-public class Planet {
+public class Planet implements Variables{
 	private int technologyDefense;
 	private int technologyAtack;
 	private int metal;
@@ -112,7 +112,11 @@ public class Planet {
 	}
 
 // ------------------------------------------------------------------------------------------------------
-
+	
+	
+	
+	
+	
 	public void upgradeTechnologyDefense() throws ResourceException{
 		if (deuterium >= upgradeDefenseTechnologyDeuteriumCost) {
 			technologyDefense++;
@@ -132,32 +136,33 @@ public class Planet {
 			throw new ResourceException("Deuterium insuficiente para actualizar la tecnologia de ataque.");
 		}
 	}
-	
+
 	public void newLigthHunter(int n) throws ResourceException{
 		int precio = n;
-		if (deuterium >= precio) {
-			for (int i = 0; i < n; i++) {
+		for (int i = 0; i < n; i++) {
+			if (deuterium >= precio & metal >= precio) {
+				
 				army[0].add(new LigthHunter());
+				deuterium -= precio;
+			} else {
+				throw new ResourceException("Deuterium insuficiente para construir unidades.");
 			}
-			deuterium -= precio;
-		} else {
-			throw new ResourceException("Deuterium insuficiente para construir unidades.");
 		}
 	}
-	
+
 	public void newHeavyHunter(int n) throws ResourceException{
 		int precio = n;
 		if (deuterium >= precio) {
 			for (int i = 0; i < n; i++) {
-				army[1].add(new HeavyHunter());
+				army[1].add(new HeavyHunter(i, i, i));
 			}
 			deuterium -= precio;
 		} else {
 			throw new ResourceException("Deuterium insuficiente para construir unidades.");
 		}
 	}
-	
-	public void newBattleShip(int n) throws ResourceException{
+
+	/*public void newBattleShip(int n) throws ResourceException{
 		int precio = n;
 		if (deuterium >= precio) {
 			for (int i = 0; i < n; i++) {
@@ -181,7 +186,7 @@ public class Planet {
 		}
 	}
 	
-	/*¡public void newMissileLauncher(int n) throws ResourceException{
+	public void newMissileLauncher(int n) throws ResourceException{
 		int precio = n;
 		if (deuterium >= precio) {
 			for (int i = 0; i < n; i++) {

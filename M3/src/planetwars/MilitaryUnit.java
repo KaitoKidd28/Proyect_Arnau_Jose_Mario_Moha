@@ -5,7 +5,7 @@ public interface MilitaryUnit {
 	public abstract int attack();
 	
 	// Restará a nuestro blindaje el daño recibido por parámetro.
-	//public abstract void tekeDamage(int receivedDamage) {
+	public abstract void tekeDamage(int receivedDamage);
 	
 	// Nos devolverá el blindaje que tengamos actualmente, después de haber recibido un ataque. 
 	public 	abstract int getAcualArmor();

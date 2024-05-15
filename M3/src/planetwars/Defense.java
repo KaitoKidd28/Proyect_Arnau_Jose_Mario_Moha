@@ -54,11 +54,19 @@ public class Defense implements MilitaryUnit, Variables{
 		// TODO Auto-generated method stub
 		return baseDamage;
 	}
+	
+	@Override
+	public void tekeDamage(int receivedDamage) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 	@Override
 	public int getAcualArmor() {
 		// TODO Auto-generated method stub
 		return armor;
 	}
+	
 	@Override
 	public int getMetalCost() {
 		// TODO Auto-generated method stub
@@ -72,6 +80,7 @@ public class Defense implements MilitaryUnit, Variables{
 			return 0;
 		}
 	}
+	
 	@Override
 	public int getDeuteriumCost() {
 		// TODO Auto-generated method stub
@@ -85,16 +94,19 @@ public class Defense implements MilitaryUnit, Variables{
 			return 0;
 		}
 	}
+	
 	@Override
 	public int getChanceGeneratinWaste() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+	
 	@Override
 	public int getChanceAttackAgain() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+	
 	@Override
 	public void resetArmor() {
 		// TODO Auto-generated method stub

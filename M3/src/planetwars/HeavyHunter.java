@@ -23,9 +23,5 @@ public class HeavyHunter extends Ship{
 	        setBaseDamage(baseDamageWithTechnology);
 		}
 		
-		// Segundo contructor.
-		public HeavyHunter() {
-			this(ARMOR_LIGTHHUNTER, BASE_DAMAGE_LIGTHHUNTER, 0);
-		}
 
 }

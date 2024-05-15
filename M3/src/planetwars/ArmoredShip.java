@@ -22,9 +22,4 @@ public class ArmoredShip extends Ship{
         setInitialArmor(armorWithTechnology);
         setBaseDamage(baseDamageWithTechnology);
 	}
-	
-	// Segundo contructo r
-	public ArmoredShip() {
-		this(ARMOR_LIGTHHUNTER, BASE_DAMAGE_LIGTHHUNTER, 0);
-	}
 }
