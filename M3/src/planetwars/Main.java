@@ -10,7 +10,6 @@ public class Main {
         planet.setUpgradeDefenseTechnologyDeuteriumCost(100);
         planet.setUpgradeAttackTechnologyDeuteriumCost(120);
         
-<<<<<<< HEAD
         //Defense missileLauncher = new MissileLauncher();
         //Ship heavyHunter = new HeavyHunter();
         //Ship battleShip = new BattleShip();
@@ -23,10 +22,7 @@ public class Main {
         
         Comprobacion comprobacion = new Comprobacion();
        
-=======
-        Comprobacion comprobacion = new Comprobacion();
         
->>>>>>> 8c1184e52adf992deb0e4e672464595885752d5d
         final String menu00 = "\n1)View Planet Stats\n2)Build\n3)Upgrade Technology\n4)View Battle Reports\n0)Exit";
         final String menu02 = "1)Build troops\n2)Build Defenses\n3)Go Back";
         final String menu03 = "1)Upgrade Defense Technology.\n2)Upgrade Attack Technology.\n3)Go Back";
@@ -94,18 +90,15 @@ public class Main {
 				break;
 			default:
 				System.out.println("\nOpcion incorrecta\n");
-<<<<<<< HEAD
 			
 		}
 
 	}
 }
-}
-=======
-			}	
-		}
-	}
-}
 
->>>>>>> 8c1184e52adf992deb0e4e672464595885752d5d
+}	
+
+	
+
+
 

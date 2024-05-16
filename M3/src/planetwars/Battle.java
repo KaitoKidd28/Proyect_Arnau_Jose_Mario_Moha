@@ -29,7 +29,7 @@ public class Battle {
 	cada ejército.*/
 	private int initialNumberUnitsPlanet;
 	private int initialNumberUnitsEnemy;
-
+	
 	// esiduos generados en la batalla [metal, deuterio].
 	private int[] wasteMetalDeuterium;
 	
