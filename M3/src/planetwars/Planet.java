@@ -9,7 +9,7 @@ public class Planet implements Variables{
 	private int deuterium;
 	private int upgradeDefenseTechnologyDeuteriumCost;
 	private int upgradeAttackTechnologyDeuteriumCost;
-	private ArrayList<MilitaryUnit>[] army = new ArrayList[7];
+	private ArrayList<MilitaryUnit>[] army = new ArrayList[6];
 
 	
 	public Planet(int technologyDefense, int technologyAtack, int metal, int deuterium,
