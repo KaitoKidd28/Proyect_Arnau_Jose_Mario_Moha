@@ -17,7 +17,7 @@ header {
     background-size: cover;
     color: #fff;
     padding: 10px 20px;
-    position: fixed;
+    position: sticky;
     width: 100%;
     top: 0;
     z-index: 999;
@@ -32,14 +32,14 @@ nav {
 
 nav ul {
     list-style-type: none;
-    margin: 15px;
+    margin: 5px;
     padding: 0;
-    width: 150%;
+    width: 170%;
 }
 nav ul li {
     display: inline;
     margin-right: 1%;
-    padding-left: 10%;
+    padding-left: 5%;
 }
 
 nav ul li a {
@@ -63,7 +63,7 @@ nav ul li a:hover {
 
 /* Contenido principal */
 main {
-    padding-top: 80px; 
+    padding-top: 40px; 
     position: relative; 
     background-color: rgb(0, 0, 0);
     padding-top: 6%;
@@ -115,15 +115,16 @@ section {
     color: white; 
     padding: 14px 28px; 
     cursor: pointer; 
-    border-radius: 5px; 
+    border-radius: 20px; 
     display: inline-block;
     margin: 5px;
     text-align: center;
-    height: 130px;
-    width: 250px;
+    height: 110px;
+    width: 220px;
 }
 .button-container {
     text-align: center; 
+    border-radius: 5%;
     
 }
 
@@ -136,13 +137,16 @@ section {
 
 } 
 .primary:hover {background-image: url("imgs/fondo_github.jpeg");
+    border-radius: 5%;
 }
 
 
 h1 {
-    font-size: 60px;
+    font-size: 140px;
     color: white; 
     text-align: center;
+    font-family: 'FuenteTitulo', sans-serif;
+
 }
 
 /* Pie de página */
@@ -171,8 +175,8 @@ footer {
     margin-left: 1%;
     margin-right: 1%;
     transform: translateY(-50%); 
-    width: 40px; 
-    height: 40px; 
+    width: 60px; 
+    height: 60px; 
     animation: moveRocket 5s infinite linear; 
 }
 
@@ -202,4 +206,10 @@ footer {
     100% {
         opacity: 1;
     }
+}
+
+
+@font-face {
+    font-family: 'FuenteTitulo';
+    src: url('imgs/Arcade.ttf') format('truetype');
 }
