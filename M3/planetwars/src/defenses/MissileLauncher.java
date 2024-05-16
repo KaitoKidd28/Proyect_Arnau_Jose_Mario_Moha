@@ -4,9 +4,13 @@ import entitys.Defense;
 
 public class MissileLauncher extends Defense {
 
-	public MissileLauncher(int armor, int initialArmor, int baseDamage) {
+	public MissileLauncher(int armor, int initialArmor, int baseDamage, int technologyDefense, int technologyAtack) {
 		super(armor, initialArmor, baseDamage);
-		// TODO Auto-generated constructor stub
+		armor = ARMOR_MISSILELAUNCHER
+				+ ((technologyDefense * PLUS_ARMOR_MISSILELAUNCHER_BY_TECHNOLOGY) * ARMOR_MISSILELAUNCHER / 100);
+		baseDamage = BASE_DAMAGE_MISSILELAUNCHER
+				+ ((technologyAtack * PLUS_ATTACK_MISSILELAUNCHER_BY_TECHNOLOGY) * BASE_DAMAGE_MISSILELAUNCHER / 100);
+		initialArmor = armor;
 	}
 
 	@Override
@@ -18,7 +22,7 @@ public class MissileLauncher extends Defense {
 	@Override
 	public void tekeDamage(int receivedDamage) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -54,7 +58,7 @@ public class MissileLauncher extends Defense {
 	@Override
 	public void resetArmor() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

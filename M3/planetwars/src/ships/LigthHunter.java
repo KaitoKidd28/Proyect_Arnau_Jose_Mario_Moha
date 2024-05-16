@@ -6,6 +6,9 @@ public class LigthHunter extends Ship {
 
 	public LigthHunter(int armor, int baseDamage, int initialArmor, int technologyDefense, int technologyAtack) {
 		super(armor, baseDamage, initialArmor);
+		armor = ARMOR_LIGTHHUNTER + ((technologyDefense * PLUS_ARMOR_LIGTHHUNTER_BY_TECHNOLOGY) * ARMOR_LIGTHHUNTER / 100);
+		baseDamage = BASE_DAMAGE_LIGTHHUNTER + ((technologyAtack * PLUS_ATTACK_LIGTHHUNTER_BY_TECHNOLOGY) * BASE_DAMAGE_LIGTHHUNTER / 100);
+		initialArmor = armor;
 	}
 	
 	

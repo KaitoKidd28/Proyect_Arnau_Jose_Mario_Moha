@@ -4,9 +4,12 @@ import entitys.Defense;
 
 public class IonCannon extends Defense {
 
-	public IonCannon(int armor, int initialArmor, int baseDamage) {
+	public IonCannon(int armor, int initialArmor, int baseDamage, int technologyDefense, int technologyAtack) {
 		super(armor, initialArmor, baseDamage);
-		// TODO Auto-generated constructor stub
+		armor = ARMOR_IONCANNON + ((technologyDefense * PLUS_ARMOR_IONCANNON_BY_TECHNOLOGY) * ARMOR_IONCANNON / 100);
+		baseDamage = BASE_DAMAGE_IONCANNON
+				+ ((technologyAtack * PLUS_ATTACK_IONCANNON_BY_TECHNOLOGY) * BASE_DAMAGE_IONCANNON / 100);
+		initialArmor = armor;
 	}
 
 	@Override
