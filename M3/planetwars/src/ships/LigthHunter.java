@@ -3,19 +3,31 @@ package ships;
 import entitys.Ship;
 
 public class LigthHunter extends Ship {
+	private final int ARMOR_LIGTHHUNTER;
+	private final int PLUS_ARMOR_LIGTHHUNTER_BY_TECHNOLOGY;
 
-	public LigthHunter(int armor, int baseDamage, int initialArmor, int technologyDefense, int technologyAtack) {
-		super(armor, baseDamage, initialArmor);
-		armor = ARMOR_LIGTHHUNTER + ((technologyDefense * PLUS_ARMOR_LIGTHHUNTER_BY_TECHNOLOGY) * ARMOR_LIGTHHUNTER / 100);
-		baseDamage = BASE_DAMAGE_LIGTHHUNTER + ((technologyAtack * PLUS_ATTACK_LIGTHHUNTER_BY_TECHNOLOGY) * BASE_DAMAGE_LIGTHHUNTER / 100);
-		initialArmor = armor;
+	
+	
+
+	
+
+	public LigthHunter(int armor, int baseDamage) {
+		super();
+		this.ARMOR_LIGTHHUNTER = 0;
+		this.PLUS_ARMOR_LIGTHHUNTER_BY_TECHNOLOGY = 0;
+		
 	}
+
 	
 	
-	public LigthHunter(int armor, int baseDamage, int initialArmor) {
-		super(armor, baseDamage, initialArmor);
+	public LigthHunter() {
+		super();
+		this.ARMOR_LIGTHHUNTER = 0;
+		this.PLUS_ARMOR_LIGTHHUNTER_BY_TECHNOLOGY = 0;
+		
 	}
-	
+
+
 
 	@Override
 	public int attack() {
