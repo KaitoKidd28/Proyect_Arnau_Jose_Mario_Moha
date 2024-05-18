@@ -52,9 +52,8 @@ public class Ship implements MilitaryUnit, Variables{
 		this.baseDamage = baseDamage;
 	}
 
-
-
 	// -------------------------------------------------------------
+	
 	@Override
 	public int attack() {
 		// TODO Auto-generated method stub
@@ -64,7 +63,7 @@ public class Ship implements MilitaryUnit, Variables{
 	@Override
 	public void tekeDamage(int receivedDamage) {
 		// TODO Auto-generated method stub
-		
+		armor -= receivedDamage;
 	}
 	
 	@Override
@@ -107,13 +106,12 @@ public class Ship implements MilitaryUnit, Variables{
 	
 	@Override
 	public int getChanceGeneratinWaste() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 	
 	@Override
 	public int getChanceAttackAgain() {
-		// TODO Auto-generated method stub
+		
 		return 0;
 	}
 	

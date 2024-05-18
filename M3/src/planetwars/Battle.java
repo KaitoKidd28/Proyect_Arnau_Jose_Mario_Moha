@@ -3,10 +3,10 @@ package planetwars;
 import java.util.ArrayList;
 
 public class Battle {
-	// Para almacenar la flota enemiga.
+	// Para almacenar la flota de nuestro planeta.
 	private ArrayList<MilitaryUnit>[] planetArmy;
 	
-	// Para almacenar la flota de nuestro planeta.
+	// Para almacenar la flota enemiga.
 	private ArrayList<MilitaryUnit>[] enemyArmy;
 	
 	/*Que es un array de ArrayList de dos filas y siete columnas,

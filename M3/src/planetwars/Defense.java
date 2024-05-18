@@ -58,6 +58,7 @@ public class Defense implements MilitaryUnit, Variables{
 	@Override
 	public void tekeDamage(int receivedDamage) {
 		// TODO Auto-generated method stub
+		armor -= receivedDamage;
 		
 	}
 	
