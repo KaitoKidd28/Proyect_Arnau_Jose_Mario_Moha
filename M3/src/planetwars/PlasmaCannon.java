@@ -13,4 +13,21 @@ public class PlasmaCannon extends Defense{
 	public PlasmaCannon() {
 		this(7000,2000);
 	}
+
+	public int getARMOR_PLASMACANNON() {
+		return ARMOR_PLASMACANNON;
+	}
+
+	public int getBASE_DAMAGE_PLASMACANNON() {
+		return BASE_DAMAGE_PLASMACANNON;
+	}
+
+	public int getPLUS_ARMOR_PLASMACANNON_BY_TECHNOLOGY() {
+		return PLUS_ARMOR_PLASMACANNON_BY_TECHNOLOGY;
+	}
+
+	public int getPLUS_ATTACK_PLASMACANNON_BY_TECHNOLOGY() {
+		return PLUS_ATTACK_PLASMACANNON_BY_TECHNOLOGY;
+	}
+	
 }

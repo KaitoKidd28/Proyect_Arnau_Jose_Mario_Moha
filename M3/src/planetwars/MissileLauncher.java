@@ -13,5 +13,21 @@ public class MissileLauncher extends Defense{
 	public MissileLauncher() {
 		this(800, 100);
 	}
+
+	public int getARMOR_MISSILELAUNCHER() {
+		return ARMOR_MISSILELAUNCHER;
+	}
+
+	public int getBASE_DAMAGE_MISSILELAUNCHER() {
+		return BASE_DAMAGE_MISSILELAUNCHER;
+	}
+
+	public int getPLUS_ARMOR_MISSILELAUNCHER_BY_TECHNOLOGY() {
+		return PLUS_ARMOR_MISSILELAUNCHER_BY_TECHNOLOGY;
+	}
+
+	public int getPLUS_ATTACK_MISSILELAUNCHER_BY_TECHNOLOGY() {
+		return PLUS_ATTACK_MISSILELAUNCHER_BY_TECHNOLOGY;
+	}
 	
 }

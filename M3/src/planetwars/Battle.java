@@ -34,14 +34,18 @@ public class Battle {
 	private int[] wasteMetalDeuterium;
 	
 	// necesarios para generar reporte de batalla, y
-	//para calcular las pérdidas materiales de cada ejército.
+	// para calcular las pérdidas materiales de cada ejército.
 	private int[] enemyDrops;
 	private int[] planetDrops;
 	
+	// array para las perdidas de metal, deuterium, y de tropas.
 	private int[][] resourcesLooses;
 	
+	// array que servirá para cuantificar cada tipo de unidad de los ejercitos iniciales.
 	private int[][] initialArmies;
 	
+	// arrays que cuantifican las unidades actuales de cada grupo,
+	// tanto para el planeta, como para el enemigo.
 	private int[] actualNumberUnitsPlanet;
 	private int [] actualNumberUnitsEnemy;
 }

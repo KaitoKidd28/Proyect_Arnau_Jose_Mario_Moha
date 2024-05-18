@@ -21,5 +21,22 @@ public class LigthHunter extends Ship{
         this(1000, 50);
     }
 
+	public int getARMOR_LIGTHHUNTER() {
+		return ARMOR_LIGTHHUNTER;
+	}
+
+	public int getPLUS_ARMOR_LIGTHHUNTER_BY_TECHNOLOGY() {
+		return PLUS_ARMOR_LIGTHHUNTER_BY_TECHNOLOGY;
+	}
+
+	public int getBASE_DAMAGE_LIGTHHUNTER() {
+		return BASE_DAMAGE_LIGTHHUNTER;
+	}
+
+	public int getPLUS_ATTACK_LIGTHHUNTER_BY_TECHNOLOGY() {
+		return PLUS_ATTACK_LIGTHHUNTER_BY_TECHNOLOGY;
+	}
+
 	
+    
 }
