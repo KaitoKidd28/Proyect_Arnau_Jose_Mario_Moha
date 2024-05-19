@@ -52,26 +52,26 @@ public class Ship implements MilitaryUnit, Variables{
 		this.baseDamage = baseDamage;
 	}
 
-	// -------------------------------------------------------------
+	// -------------------------------------------------
 	
 	@Override
 	public int attack() {
 		// TODO Auto-generated method stub
-		return baseDamage;
+		return this.baseDamage;
 	}
-	
+
 	@Override
 	public void tekeDamage(int receivedDamage) {
 		// TODO Auto-generated method stub
-		armor -= receivedDamage;
+		this.armor -= receivedDamage;
 	}
-	
+
 	@Override
 	public int getAcualArmor() {
 		// TODO Auto-generated method stub
-		return armor;
+		return this.armor;
 	}
-	
+
 	@Override
 	public int getMetalCost() {
 		// TODO Auto-generated method stub
@@ -103,22 +103,41 @@ public class Ship implements MilitaryUnit, Variables{
 	    	return 0;
 	    }
 	}
-	
+
 	@Override
 	public int getChanceGeneratinWaste() {
-		return 0;
+	    if (this instanceof LigthHunter) {
+	        return Variables.CHANCE_GENERATNG_WASTE_LIGTHHUNTER;
+	    } else if (this instanceof HeavyHunter) {
+	        return Variables.CHANCE_GENERATNG_WASTE_HEAVYHUNTER;
+	    } else if (this instanceof BattleShip) {
+	        return Variables.CHANCE_GENERATNG_WASTE_BATTLESHIP;
+	    } else if (this instanceof ArmoredShip) {
+	        return Variables.CHANCE_GENERATNG_WASTE_ARMOREDSHIP;
+	    } else {
+	    	return 0;
+	    }
 	}
-	
+
 	@Override
 	public int getChanceAttackAgain() {
-		
-		return 0;
+	    if (this instanceof LigthHunter) {
+	        return Variables.CHANCE_ATTACK_AGAIN_LIGTHHUNTER;
+	    } else if (this instanceof HeavyHunter) {
+	        return Variables.CHANCE_ATTACK_AGAIN_HEAVYHUNTER;
+	    } else if (this instanceof BattleShip) {
+	        return Variables.CHANCE_ATTACK_AGAIN_BATTLESHIP;
+	    } else if (this instanceof ArmoredShip) {
+	        return Variables.CHANCE_ATTACK_AGAIN_ARMOREDSHIP;
+	    } else {
+	    	return 0;
+	    }
 	}
-	
+
 	@Override
 	public void resetArmor() {
 		// TODO Auto-generated method stub
-		armor = initialArmor;
+		this.armor = this.initialArmor;
 	}
 
 }

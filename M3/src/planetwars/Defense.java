@@ -34,7 +34,7 @@ public class Defense implements MilitaryUnit, Variables{
 	public void setInitialArmor(int initialArmor) {
 		this.initialArmor = initialArmor;
 	}
-
+	
 
 
 	public int getbaseDamage() {
@@ -48,29 +48,24 @@ public class Defense implements MilitaryUnit, Variables{
 	}
 	
 	// ---------------------------------------------------
-	
+
 	@Override
 	public int attack() {
-		// TODO Auto-generated method stub
-		return baseDamage;
+		return this.baseDamage;
 	}
-	
+
 	@Override
 	public void tekeDamage(int receivedDamage) {
-		// TODO Auto-generated method stub
-		armor -= receivedDamage;
-		
+		this.armor -= receivedDamage;
 	}
-	
+
 	@Override
 	public int getAcualArmor() {
-		// TODO Auto-generated method stub
-		return armor;
+		return this.armor;
 	}
-	
+
 	@Override
 	public int getMetalCost() {
-		// TODO Auto-generated method stub
 		if (this instanceof MissileLauncher) {
 			return Variables.METAL_COST_MISSILELAUNCHER;
 		} else if (this instanceof IonCannon) {
@@ -81,10 +76,9 @@ public class Defense implements MilitaryUnit, Variables{
 			return 0;
 		}
 	}
-	
+
 	@Override
 	public int getDeuteriumCost() {
-		// TODO Auto-generated method stub
 		if (this instanceof MissileLauncher) {
 			return Variables.DEUTERIUM_COST_MISSILELAUNCHER;
 		} else if (this instanceof IonCannon) {
@@ -95,23 +89,36 @@ public class Defense implements MilitaryUnit, Variables{
 			return 0;
 		}
 	}
-	
+
 	@Override
 	public int getChanceGeneratinWaste() {
-		// TODO Auto-generated method stub
-		return 0;
+		if (this instanceof MissileLauncher) {
+			return Variables.CHANCE_GENERATNG_WASTE_MISSILELAUNCHER;
+		} else if (this instanceof IonCannon) {
+			return Variables.CHANCE_GENERATNG_WASTE_IONCANNON;
+		} else if (this instanceof PlasmaCannon) {
+			return Variables.CHANCE_GENERATNG_WASTE_PLASMACANNON;
+		} else {
+			return 0;
+		}
 	}
-	
+
 	@Override
 	public int getChanceAttackAgain() {
-		// TODO Auto-generated method stub
-		return 0;
+		if (this instanceof MissileLauncher) {
+			return Variables.CHANCE_ATTACK_AGAIN_MISSILELAUNCHER;
+		} else if (this instanceof IonCannon) {
+			return Variables.CHANCE_ATTACK_AGAIN_IONCANNON;
+		} else if (this instanceof PlasmaCannon) {
+			return Variables.CHANCE_ATTACK_AGAIN_PLASMACANNON;
+		} else {
+			return 0;
+		}
 	}
-	
+
 	@Override
 	public void resetArmor() {
-		// TODO Auto-generated method stub
-		armor = initialArmor;
+		this.armor = this.initialArmor;
 	}
-	
+
 }
