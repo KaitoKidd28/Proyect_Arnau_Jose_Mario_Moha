@@ -1,28 +1,11 @@
 package planetwars;
 
+import java.util.ArrayList;
 public class Main {
 	public static void main(String[] args) {
 		Planet planet = new Planet();
-		planet.setTechnologyDefense(3);
-        planet.setTechnologyAtack(2);
-        planet.setMetal(10000);
-        planet.setDeuterium(10000);
-        planet.setUpgradeDefenseTechnologyDeuteriumCost(100);
-        planet.setUpgradeAttackTechnologyDeuteriumCost(120);
-        
-        //Defense missileLauncher = new MissileLauncher();
-        //Ship heavyHunter = new HeavyHunter();
-        //Ship battleShip = new BattleShip();
-        //Ship armoredShip = new ArmoredShip();
-        
-        //System.out.println("Costo de deuterio para Missile Launcher: " + missileLauncher.getDeuteriumCost());
-        //System.out.println("Costo de deuterio para Heavy Hunter: " + heavyHunter.getDeuteriumCost());
-        //System.out.println("Costo de deuterio para Battle Ship: " + battleShip.getDeuteriumCost());
-        //System.out.println("Costo de deuterio para Armored Ship: " + armoredShip.getDeuteriumCost());
-        
         Comprobacion comprobacion = new Comprobacion();
        
-        
         final String menu00 = "\n1)View Planet Stats\n2)Build\n3)Upgrade Technology\n4)View Battle Reports\n0)Exit";
         final String menu02 = "1)Build troops\n2)Build Defenses\n3)Go Back";
         final String menu03 = "1)Upgrade Defense Technology.\n2)Upgrade Attack Technology.\n3)Go Back";
@@ -96,7 +79,7 @@ public class Main {
 	}
 }
 
-}	
+}
 
 	
 
