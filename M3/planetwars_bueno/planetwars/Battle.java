@@ -51,7 +51,17 @@ public class Battle {
 	private int[] actualNumberUnitsEnemy;
 
 	public void initInitialArmies() {
-
+		for (int i = 0; i < 2; i++) {
+			for (int j = 0; j < 7; j++) {
+				if (i == 0) {
+					initialArmies[i][j] = actualNumberUnitsPlanet[j];
+				}
+				else {
+					initialArmies[i][j] = actualNumberUnitsEnemy[j];
+				}
+				
+			}
+		}
 	}
 
 	public void updateResourcesLooses() {
@@ -73,16 +83,16 @@ public class Battle {
 	public int getGroupDefender(ArrayList<MilitaryUnit>[] army) {
 		return -1;
 	}
-	
+
 	public int getPlanetGroupAttacker() {
 		return -1;
 	}
-	
+
 	public int getEnemyGroupAttacker() {
 		return -1;
 	}
-	
+
 	public void resetArmyArmor() {
-		
+
 	}
 }
