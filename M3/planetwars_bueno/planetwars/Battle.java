@@ -82,7 +82,7 @@ public class Battle {
 	}
 
 	public int[] fleetResourceCost(ArrayList<MilitaryUnit>[] army) {
-		
+		return 
 	}
 
 	public int initialFleetNumber(ArrayList<MilitaryUnit>[] army) {
