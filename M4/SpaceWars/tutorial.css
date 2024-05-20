@@ -13,48 +13,44 @@ body {
 
 /* Encabezado */
 header {
-    background-image: url('imgs/fondo_encabezado.jpg'); 
-    background-size: cover;
+    background-color: #000000;
     color: #fff;
     padding: 10px 20px;
-    position: fixed;
-    width: 100%;
+    position: sticky;
     top: 0;
     z-index: 999;
     display: flex;
     align-items: center;
-}
-
-nav {
-    margin-left: auto; 
+    justify-content: space-between;
 }
 
 nav ul {
     list-style-type: none;
+    display: flex;
     margin: 0;
     padding: 0;
 }
 
 nav ul li {
-    display: inline;
     margin-right: 20px;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    padding: 10px 15px;
+    display: block;
 }
 
-
 nav ul li a:hover {
+    background-color: #444;
     color: #ffcc00; 
 }
 
-
 .logo {
-    width: 60px; 
-    height: auto; 
-    margin-right: 20px; 
+    width: 60px;
+    height: auto;
+    margin-right: 20px;
     border-radius: 50%;
 }
 
