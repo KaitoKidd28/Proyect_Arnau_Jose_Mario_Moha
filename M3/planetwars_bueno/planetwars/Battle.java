@@ -58,20 +58,31 @@ public class Battle {
 
 	}
 
-	public void fleetResourceCost(ArrayList<MilitaryUnit>[] army) {
-
+	public int fleetResourceCost(ArrayList<MilitaryUnit>[] army) {
+		return -1;
 	}
 
-	public void initialFleetNumber(ArrayList<MilitaryUnit>[] army) {
-
+	public int initialFleetNumber(ArrayList<MilitaryUnit>[] army) {
+		return -1;
 	}
 
-	public void remainderPercentageFleet(ArrayList<MilitaryUnit>[] army) {
-
+	public int remainderPercentageFleet(ArrayList<MilitaryUnit>[] army) {
+		return -1;
 	}
 
-	public void getGroupDefender(ArrayList<MilitaryUnit>[] army) {
-
+	public int getGroupDefender(ArrayList<MilitaryUnit>[] army) {
+		return -1;
 	}
-
+	
+	public int getPlanetGroupAttacker() {
+		return -1;
+	}
+	
+	public int getEnemyGroupAttacker() {
+		return -1;
+	}
+	
+	public void resetArmyArmor() {
+		
+	}
 }
