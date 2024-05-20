@@ -11,10 +11,11 @@ body {
 .main-header {
     background: url('wp8179245.webp') no-repeat center center/cover;
     color: #fff;
-    height: 55vh;
+    height: 500px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    
+    
 }
 
 .search-container {
@@ -73,7 +74,7 @@ form {
 }
 
 .icon-img {
-    width: 55px;
+    width: 34px;
     height: 25px;
 }
 
@@ -135,6 +136,7 @@ form {
 
 .nav-links a:hover {
     color: #00bfff;
+    background-color: yellow;
 }
 
 .header-content {
