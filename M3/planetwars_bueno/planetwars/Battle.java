@@ -82,7 +82,17 @@ public class Battle {
 	}
 
 	public int[] fleetResourceCost(ArrayList<MilitaryUnit>[] army) {
-		return 
+		 int totalMetalCost = 0;
+         int totalDeuteriumCost = 0;
+
+         for (ArrayList<MilitaryUnit> unitList : army) {
+             for (MilitaryUnit unit : unitList) {
+                 totalMetalCost += unit.getMetalCost();
+                 totalDeuteriumCost += unit.getDeuteriumCost();
+             }
+         }
+
+         return new int[] { totalMetalCost, totalDeuteriumCost };
 	}
 
 	public int initialFleetNumber(ArrayList<MilitaryUnit>[] army) {
