@@ -50,7 +50,7 @@ nav ul li a:hover {
 }
 
 .logo {
-    width: 60px;
+    width: 65px;
     height: auto;
     margin-right: 20px;
     border-radius: 50%;
@@ -85,7 +85,7 @@ main {
     display: flex;
     flex-direction: column; 
     align-items: center;
-    width: 30%;
+    width: 25%;
     height: 50%; 
     margin-bottom: 20px;
 }
