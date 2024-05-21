@@ -38,21 +38,21 @@ public class Battle {
 	       }
 	   }
 	
-	public void updateResourcesLooses() {
-        for (int i = 0; i < 2; i++) {
-            for (int j = 0; j < 3; j++) {
-                resourcesLooses[i][j] = 0;
-            }
-        }
-        for (int i = 0; i < 2; i++) {
-            for (int j = 0; j < 7; j++) {
-                resourcesLooses[i][0] += initialCostFleet[i][0] * (initialArmies[i][j] - actualNumberUnitsPlanet[j]);
-                resourcesLooses[i][1] += initialCostFleet[i][1] * (initialArmies[i][j] - actualNumberUnitsPlanet[j]);
-            }
-        }
-        resourcesLooses[0][2] = resourcesLooses[0][0] + 5 * resourcesLooses[0][1];
-        resourcesLooses[1][2] = resourcesLooses[1][0] + 5 * resourcesLooses[1][1];
-    }
+//	public void updateResourcesLooses() {
+//        for (int i = 0; i < 2; i++) {
+//            for (int j = 0; j < 3; j++) {
+//                resourcesLooses[i][j] = 0;
+//            }
+//        }
+//        for (int i = 0; i < 2; i++) {
+//            for (int j = 0; j < 7; j++) {
+//                resourcesLooses[i][0] += initialCostFleet[i][0] * (initialArmies[i][j] - actualNumberUnitsPlanet[j]);
+//                resourcesLooses[i][1] += initialCostFleet[i][1] * (initialArmies[i][j] - actualNumberUnitsPlanet[j]);
+//            }
+//        }
+//        resourcesLooses[0][2] = resourcesLooses[0][0] + 5 * resourcesLooses[0][1];
+//        resourcesLooses[1][2] = resourcesLooses[1][0] + 5 * resourcesLooses[1][1];
+//    }
 	
 	public int[] fleetResourceCost(ArrayList<MilitaryUnit>[] army) {
         int totalMetalCost = 0;
@@ -72,7 +72,6 @@ public class Battle {
 	    for (int i = 0; i < army.length; i++) {
 	        unitCounts[i] = army[i].size();
 	    }
-
 	    return unitCounts;
 	}
 
