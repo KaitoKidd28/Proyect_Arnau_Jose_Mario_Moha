@@ -90,10 +90,35 @@ h2 {
     color: white;
 }
 
-.product-grid {
+.filter-buttons {
     display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.filter-buttons button {
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filter-buttons button:hover {
+    background-color: #ffcc00;
+    color: black;
+}
+
+.product-grid {
+    display: none;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.product-grid.active {
+    display: flex;
 }
 
 .product-card {
@@ -150,4 +175,3 @@ footer {
     font-family: 'MiFuente';
     src: url('imgs/KrinkesDecorPERSONAL.ttf') format('truetype');
 }
-

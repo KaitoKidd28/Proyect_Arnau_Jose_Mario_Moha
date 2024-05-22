@@ -8,14 +8,17 @@
 body {
     font-family: Arial, 'Times New Roman', Times, serif;
     line-height: 1.6;
-    background-color: #000000; /* Fondo negro */
-    color: #fff; /* Texto blanco */
-    margin: 0 20px; /* Margen a los lados */
+    background-color: #000000; 
+    color: #fff; 
+    margin: 0 20px; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* Encabezado */
 header {
-    background-color: #000000;
+    background-color: #0a0a0a;
     color: #fff;
     padding: 10px 20px;
     position: sticky;
@@ -61,6 +64,7 @@ nav ul li a:hover {
 main {
     padding-top: 80px; 
     position: relative; 
+    flex: 1;
 }
 
 .title {
@@ -72,30 +76,45 @@ main {
     font-size: 2.5em; 
 }
 
-.team-member {
-    display: flex;
-    flex-wrap: wrap; 
-    justify-content: space-between; 
+.about-us {
     margin-bottom: 40px;
+    text-align: center; 
+}
+.team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 -10px; 
+}
+
+.team-member {
+    width: calc(50% - 20px); 
+    margin-bottom: 20px;
+    padding: 0 10px; 
+    display: flex;
+    justify-content: center; 
 }
 
 .member-box {
-    background-color: #444444;
-    padding: 20px;
+    background-color: #444;
+    padding: 15px;
     border-radius: 10px;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
-    width: 25%;
-    height: 50%; 
-    margin-bottom: 20px;
+    width: 90%; 
+    transition: transform 0.3s; 
+}
+
+.member-box:hover {
+    transform: scale(1.1); 
 }
 
 .member-image {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    margin-bottom: 20px; 
+    margin-bottom: 15px; 
 }
 
 footer {
@@ -105,4 +124,5 @@ footer {
     text-align: center;
     bottom: 0;
     width: 100%;
+    margin-top: auto;
 }
