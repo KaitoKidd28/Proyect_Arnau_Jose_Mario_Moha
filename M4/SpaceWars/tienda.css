@@ -31,14 +31,15 @@ nav ul {
 }
 
 nav ul li {
-    margin-right: 20px;
+    margin-right: 5px; 
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    padding: 10px 15px;
+    padding: 5px 9px; 
     display: block;
+    font-size: 0.9em; 
 }
 
 nav ul li a:hover {
