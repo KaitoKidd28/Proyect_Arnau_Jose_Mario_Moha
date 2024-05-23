@@ -95,8 +95,14 @@ public class Battle {
          return new int[] { totalMetalCost, totalDeuteriumCost };
 	}
 
-	public int initialFleetNumber(ArrayList<MilitaryUnit>[] army) {
-		return -1;
+	public int[] initialFleetNumber(ArrayList<MilitaryUnit>[] army) {
+		 int[] unitCounts = new int[army.length]; // Array para almacenar la cantidad de cada tipo de unidad
+
+		    for (int i = 0; i < army.length; i++) {
+		        unitCounts[i] = army[i].size();
+		    }
+
+		    return unitCounts;
 	}
 
 	public int remainderPercentageFleet(ArrayList<MilitaryUnit>[] army) {
