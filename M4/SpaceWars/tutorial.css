@@ -64,7 +64,7 @@ nav ul li a:hover {
 
 /* Título del tutorial */
 .title {
-    background-image: url('imgs/fondo_main.webp');
+    background-image: url('imgs/fondo_encabezado.jpg');
     background-size: cover;
     color: white;
     text-align: center;
@@ -72,7 +72,7 @@ nav ul li a:hover {
 }
 
 .title h1 {
-    font-size: 3em;
+    font-size: 4em;
 }
 
 /* Sección de opciones */
