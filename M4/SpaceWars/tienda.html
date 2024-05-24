@@ -8,9 +8,11 @@
 </head>
 <body>
     <header>
-        <img src="imgs/logo.jpg" alt="Saturno" class="logo">
+        <div class="logo-container">
+            <img src="imgs/logo.jpg" alt="Saturno" class="logo">
+        </div>
         <nav>
-            <ul>
+            <ul class="menu">
                 <li><a href="principal.html">Home</a></li>
                 <li><a href="tutorial.html">Tutorial</a></li>
                 <li><a href="about.html">About Us</a></li>
@@ -31,7 +33,7 @@
             <div class="filter-buttons">
                 <button onclick="filterProducts('all')">All</button>
                 <button onclick="filterProducts('available')">Available</button>
-                <button onclick="filterProducts('coming-soon')">Soon</button>
+                <button onclick="filterProducts('coming-soon')">Coming Soon</button>
             </div>
             
             <div class="product-grid available">
@@ -131,7 +133,7 @@
     </main>
 
     <footer>
-        <p>2024 - Página realizada con HTML</p>
+        <p>2024 - Page made with HTML</p>
     </footer>
     
     <script src="tienda.js"></script>

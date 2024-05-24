@@ -17,6 +17,31 @@ body {
 }
 
 /* Encabezado */
+.logo-container {
+    text-align: center;
+}
+
+.menu {
+    text-align: center;
+}
+
+.menu li {
+    margin-right: 5px; 
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 9px; 
+    display: block;
+    font-size: 0.9em; 
+}
+
+.menu li a:hover {
+    background-color: #444;
+    color: #ffcc00; 
+}
+
 header {
     background-color: #0a0a0a;
     color: #fff;
@@ -144,4 +169,21 @@ footer {
     bottom: 0;
     width: 100%;
     margin-top: auto;
+}
+
+@media screen and (max-width: 768px) {
+    /* Centrar el logo */
+    .logo-container {
+        margin-bottom: 20px; 
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu li {
+        margin: 5px 0; 
+    }
 }
