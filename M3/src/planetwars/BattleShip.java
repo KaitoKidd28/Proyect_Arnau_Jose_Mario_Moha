@@ -2,13 +2,13 @@ package planetwars;
 
 public class BattleShip extends Ship{
 	// Armadura de nuestro cazador ligero .
-	private final int ARMOR_LIGTHHUNTER = 1000;
+	private final int ARMOR_BATTLESHIP = 6000;
 	// Plus de armadura que tendrá en función del nivel de tecnologia de defensa que tengamos.
-	private final int PLUS_ARMOR_LIGTHHUNTER_BY_TECHNOLOGY = 5;
+	private final int PLUS_ARMOR_BATTLESHIP_BY_TECHNOLOGY = 5;
 	
-	private final int BASE_DAMAGE_LIGTHHUNTER = 50;
+	private final int BASE_DAMAGE_BATTLESHIP= 1000;
 	
-	private final int PLUS_ATTACK_LIGTHHUNTER_BY_TECHNOLOGY = 10;
+	private final int PLUS_ATTACK_BATTLESHIP_BY_TECHNOLOGY = 10;
 	
 	// Primer constructor
 	public BattleShip(int armor, int baseDamage) {

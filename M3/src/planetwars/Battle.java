@@ -18,6 +18,11 @@ public class Battle {
 	private int[] actualNumberUnitsPlanet;
 	private int[] actualNumberUnitsEnemy;
 	
+	
+	public void battle() {
+		
+	}
+	
 	public String getBattleReport(int battles) {
 		return battleDevelopment;
 	}
@@ -90,7 +95,7 @@ public class Battle {
 //	}
 	
 	public int remainderPercentageFleet(ArrayList<MilitaryUnit>[] army) {
-		return 0;	
+		return 0;
 	}
 	
 	public int getGroupDefender(ArrayList<MilitaryUnit>[] army) {

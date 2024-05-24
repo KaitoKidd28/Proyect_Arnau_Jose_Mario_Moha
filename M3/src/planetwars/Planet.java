@@ -15,12 +15,12 @@ public class Planet implements Variables{
 	public Planet(int technologyDefense, int technologyAtack, int metal, int deuterium,
 			int upgradeDefenseTechnologyDeuteriumCost, int upgradeAttackTechnologyDeuteriumCost) {
 		super();
-		this.technologyDefense = technologyDefense;
-		this.technologyAtack = technologyAtack;
-		this.metal = metal;
-		this.deuterium = deuterium;
-		this.upgradeDefenseTechnologyDeuteriumCost = upgradeDefenseTechnologyDeuteriumCost;
-		this.upgradeAttackTechnologyDeuteriumCost = upgradeAttackTechnologyDeuteriumCost;
+		this.technologyDefense = 0;
+		this.technologyAtack = 0;
+		this.metal = 200000;
+		this.deuterium = 54500;
+		this.upgradeDefenseTechnologyDeuteriumCost = 2000;
+		this.upgradeAttackTechnologyDeuteriumCost = 2000;
 	}
 
 	public Planet() {
@@ -113,24 +113,32 @@ public class Planet implements Variables{
 
 // ------------------------------------------------------------------------------------------------------
 	
-	public void upgradeTechnologyDefense() throws ResourceException{
-		if (deuterium >= upgradeDefenseTechnologyDeuteriumCost) {
-			technologyDefense++;
-			deuterium -= upgradeDefenseTechnologyDeuteriumCost;
-			upgradeDefenseTechnologyDeuteriumCost *= 1.1;
-		} else {
-			throw new ResourceException("Deuterium insuficiente para actualizar la tecnologia de defensa.");
-		}
+	public void upgradeTechnologyDefense(){
+		try {
+			if (deuterium >= upgradeDefenseTechnologyDeuteriumCost) {
+				technologyDefense++;
+				deuterium -= upgradeDefenseTechnologyDeuteriumCost;
+				upgradeDefenseTechnologyDeuteriumCost *= 1.1;
+			} else {
+				throw new ResourceException("There's not enough deuterium to upgrade defense Technology");
+			}
+		}catch (ResourceException e) {
+            System.out.println(e.getMessage());
+        }
 	}
 	
-	public void upgradeTechnologyAttack() throws ResourceException{
-		if (deuterium >= upgradeAttackTechnologyDeuteriumCost) {
-			technologyAtack++;
-			deuterium -= upgradeAttackTechnologyDeuteriumCost;
-			upgradeAttackTechnologyDeuteriumCost *= 1.1;
-		} else {
-			throw new ResourceException("Deuterium insuficiente para actualizar la tecnologia de ataque.");
-		}
+	public void upgradeTechnologyAttack(){
+		try {
+			if (deuterium >= upgradeAttackTechnologyDeuteriumCost) {
+				technologyAtack++;
+				deuterium -= upgradeAttackTechnologyDeuteriumCost;
+				upgradeAttackTechnologyDeuteriumCost *= 1.1;
+			} else {
+				throw new ResourceException("There's not enough deuterium to upgrade attack Technology");
+			}
+		}catch (ResourceException e) {
+            System.out.println(e.getMessage());
+        }
 		
 	}
 
@@ -153,7 +161,7 @@ public class Planet implements Variables{
                 break; 
             }
         }
-        System.out.println("aded "+unidad+" LigthHunter");
+        System.out.println("aded "+unidad+" Ligth Hunter");
     }
 
 	public void newHeavyHunter(int n) throws ResourceException{
@@ -175,7 +183,7 @@ public class Planet implements Variables{
                 break; 
             }
         }
-        System.out.println("aded "+unidad+" HeavyHunter");
+        System.out.println("aded "+unidad+" Heavy Hunter");
     }
 
 	public void newBattleShip(int n) throws ResourceException{
@@ -197,7 +205,7 @@ public class Planet implements Variables{
                 break; 
             }
         }
-        System.out.println("aded "+unidad+" BattleShip");
+        System.out.println("aded "+unidad+" Battle Ship");
     }
 	
 	public void newArmoredShip(int n) throws ResourceException{
@@ -219,7 +227,7 @@ public class Planet implements Variables{
                 break; 
             }
         }
-        System.out.println("aded "+unidad+" ArmoredShip");
+        System.out.println("aded "+unidad+" Armored Ship");
     }
 	
 	public void newMissileLauncher(int n) throws ResourceException{
@@ -241,7 +249,7 @@ public class Planet implements Variables{
                 break; 
             }
         }
-        System.out.println("aded "+unidad+" MissileLauncher");
+        System.out.println("aded "+unidad+" Missile Launcher");
     }
 	
 	public void newIonCannon(int n) throws ResourceException{
@@ -263,7 +271,7 @@ public class Planet implements Variables{
                 break; 
             }
         }
-        System.out.println("aded "+unidad+" IonCannon");
+        System.out.println("aded "+unidad+" Ion Cannon");
     }
 	
 	public void newPlasmaCannon(int n) throws ResourceException{
@@ -285,7 +293,7 @@ public class Planet implements Variables{
                 break; 
             }
         }
-        System.out.println("aded "+unidad+" PlasmaCannon");
+        System.out.println("aded "+unidad+" Plasma Cannon");
     }
 	
 	public void printStats() {
