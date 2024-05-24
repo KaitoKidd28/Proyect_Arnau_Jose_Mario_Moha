@@ -76,10 +76,28 @@ main {
     font-size: 2.5em; 
 }
 
+/* Sección sobre nosotros */
 .about-us {
     margin-bottom: 40px;
     text-align: center; 
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
 }
+
+.about-us h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #3953d2;
+}
+
+.about-us p {
+    font-size: 1.2em;
+    line-height: 1.8;
+}
+
+/* Sección miembros del equipo */
 .team-members {
     display: flex;
     flex-wrap: wrap;
@@ -117,6 +135,7 @@ main {
     margin-bottom: 15px; 
 }
 
+/* Pie de página */
 footer {
     background: #000000;
     color: #fff;
