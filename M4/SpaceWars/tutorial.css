@@ -22,9 +22,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
 }
-
 
 nav ul {
     list-style-type: none;
@@ -50,11 +48,6 @@ nav ul li a:hover {
     color: #ffcc00; 
 }
 
-nav ul li a:hover {
-    background-color: #444;
-    color: #ffcc00; 
-}
-
 .logo {
     width: 65px;
     height: auto;
@@ -64,7 +57,7 @@ nav ul li a:hover {
 
 /* Título del tutorial */
 .title {
-    background-image: url('imgs/fondo_encabezado.jpg');
+    background-image: url("imgs/fondo_galaxia.jpg");
     background-size: cover;
     color: white;
     text-align: center;
@@ -87,22 +80,56 @@ nav ul li a:hover {
     margin-bottom: 20px;
 }
 
-.options ul {
-    list-style-type: none;
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
-.options ul li {
-    margin-bottom: 10px;
-}
-
-.options ul li a {
-    color: #ffcc00;
+.button {
+    position: relative;
+    padding: 10px 20px;
+    background-color: #483d8b; 
+    color: white;
     text-decoration: none;
+    border-radius: 5px;
     font-size: 1.2em;
+    z-index: 1;
+    overflow: hidden;
+    border: 2px solid transparent;
+    transition: color 0.3s, border-color 0.3s;
 }
 
-.options ul li a:hover {
-    text-decoration: underline;
+.button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, #8a2be2, #4b0082, #1e90ff, #00bfff); 
+    background-size: 400%;
+    z-index: -1;
+    animation: rotateColors 6s linear infinite;
+    border-radius: 5px;
+}
+
+@keyframes rotateColors {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.button:hover::before {
+    filter: brightness(1.2);
+}
+
+.button:hover {
+    color: #000000; 
+    border-color: #000000; 
 }
 
 /* Contenido del tutorial */

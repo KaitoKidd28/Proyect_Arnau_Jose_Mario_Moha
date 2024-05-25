@@ -1,10 +1,10 @@
+/* Estilos generales */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilos generales */
 body {
     font-family: Arial, 'Times New Roman', Times, serif;
     line-height: 1.6;
@@ -23,6 +23,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative; 
 }
 
 nav ul {
@@ -90,7 +91,6 @@ main {
     padding-bottom: 2%;
     min-height: calc(100vh - 60px); 
 }
-
 
 section {
     margin-bottom: 4%;
@@ -161,6 +161,39 @@ h1 {
     font-family: 'FuenteTitulo', sans-serif;
 }
 
+.title {
+    display: flex; 
+    color: white;
+    background-image: url("imgs/fondo_galaxia.jpg");
+    background-size: cover;
+    height: 600px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.rocket {
+    position: absolute;
+    bottom: -320px; 
+    left: 10px; 
+    width: 50px; 
+    height: 50px; 
+    transform: rotate(-90deg); 
+    animation: moveUp 7s forwards;
+}
+
+@keyframes moveUp {
+    0% {
+        transform: translateY(0) rotate(-45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(-45deg); 
+        opacity: 0;
+    }
+}
+
 /* Pie de página */
 footer {
     background: radial-gradient(circle, #000000 10%, transparent 60%), #000000;
@@ -169,47 +202,6 @@ footer {
     text-align: center;
     bottom: 0;
     width: 100%;
-}
-
-.title {
-    display: flex; 
-    color: white;
-    background-image: url("imgs/fondo_encabezado.jpg");
-    background-size: cover;
-    height: 600px;
-    align-items: center;
-}
-
-.rocket {
-    margin-top: -9%;
-    margin-left: 9%;
-    margin-right: 9%;
-    transform: translateY(-50%); 
-    width: 70px; 
-    height: 70px; 
-    animation: moveRocket 5s infinite linear; 
-}
-
-.rocket1 {
-    margin-top: 23%;
-    margin-left: 9%;
-    margin-right: 9%;
-    transform: translateY(-50%); 
-    width: 70px; 
-    height: 70px; 
-    animation: moveRocket 5s infinite linear; 
-}
-
-@keyframes moveRocket {
-    0% {
-        transform: translateY(-50%) rotate(0);
-    }
-    50% {
-        transform: translateY(-50%) rotate(180deg);
-    }
-    100% {
-        transform: translateY(-50%) rotate(360deg);
-    }
 }
 
 /* Animación */
@@ -232,7 +224,7 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
-    .rocket, .rocket1 {
+    .rocket {
         display: none;
     }
     h1 {
@@ -250,5 +242,29 @@ footer {
 
     .menu li {
         margin: 5px 0; 
+    }
+
+    .section2 {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .column {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .imagen-columna {
+        width: 100%;
+        height: auto;
+    }
+
+    .section2 p {
+        margin: 10px 0;
+        font-size: 14px;
+    }
+
+    .izquierda, .derecha {
+        flex: 1;
     }
 }

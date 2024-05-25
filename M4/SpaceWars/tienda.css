@@ -92,12 +92,12 @@ main {
     justify-content: center;
     align-items: center;
     color: white;
-    background-image: url("imgs/fondo_encabezado.jpg");
+    background-image: url("imgs/fondo_galaxia.jpg");
     background-size: cover;
     height: 200px;
     text-align: center;
     padding: 20px;
-    margin-top: -10px; /* Para pegar al encabezado */
+    margin-top: -10px; 
 }
 
 .title h1 {

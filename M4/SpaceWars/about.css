@@ -1,10 +1,10 @@
+/* Estilos generales */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilos generales */
 body {
     font-family: Arial, 'Times New Roman', Times, serif;
     line-height: 1.6;
@@ -95,7 +95,7 @@ main {
 .title {
     text-align: center;
     margin-bottom: 40px;
-    background-image: url('imgs/fondo_encabezado.jpg'); 
+    background-image: url("imgs/fondo_galaxia.jpg"); 
     background-size: cover;
     padding: 20px;
     font-size: 2.5em; 
@@ -171,8 +171,8 @@ footer {
     margin-top: auto;
 }
 
+/* Adaptación para movil */
 @media screen and (max-width: 768px) {
-    /* Centrar el logo */
     .logo-container {
         margin-bottom: 20px; 
     }
@@ -185,5 +185,33 @@ footer {
 
     .menu li {
         margin: 5px 0; 
+    }
+
+    /* Ajustes específicos para móviles */
+    .team-members {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-member {
+        width: 80%; 
+    }
+
+    .member-box {
+        padding: 10px;
+        width: 100%;
+    }
+
+    .member-image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .member-info h2 {
+        font-size: 1.5em;
+    }
+
+    .member-info p {
+        font-size: 0.9em;
     }
 }
