@@ -4,8 +4,11 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Timer;
 import java.util.TimerTask;
+import planetwars.*;
 
 public class Main {
+	private Battle pelea;
+	private Planet planet;
 	public static void main(String[] args) throws ResourceException {
 		Planet planet = new Planet();
 		planet.setMetal(200000);
@@ -35,6 +38,17 @@ public class Main {
 				planet.getUpgradeDefenseTechnologyDeuteriumCost(), planet.getUpgradeAttackTechnologyDeuteriumCost());
 		final String menu05 = "Main Menu\n1)View Planet Stats\n2)Build\n3)Upgrade Technology\n4)View Battle Reports\n5)View Thread Comming\n0)Exit";
 		boolean salir = false;
+//		ArrayList<MilitaryUnit>[] armies = new ArrayList[4];
+//		armies[0] = new ArrayList<MilitaryUnit>();
+//		armies[1] = new ArrayList<MilitaryUnit>();
+//		armies[2] = new ArrayList<MilitaryUnit>();
+//		armies[3] = new ArrayList<MilitaryUnit>();
+//		armies[0].add(new LigthHunter());
+//		armies[1].add(new HeavyHunter());
+//		armies[2].add(new BattleShip());
+//		armies[3].add(new ArmoredShip());
+//		Battle pelea = new Battle();
+//		pelea.getGroupDefender(armies);
 		while (!salir) {
 			System.out.println(menu00);
 			System.out.println("Option > ");
@@ -189,5 +203,15 @@ public class Main {
 
 		}
 	}
-
+	public void fight() {
+		int numAleatorio = (int) Math.random()*2+1;
+		int grupoAtacante = 0;
+		int grupoDefensor = 0;
+		int atacante = 0;
+		int defensor = 0;
+		boolean salir = false;
+		while (!salir) {
+			
+		}
+	}
 }
