@@ -18,7 +18,7 @@ public class BattleShip extends Ship{
 	
 	// Segundo contructor
     public BattleShip() {
-        this(1000, 50);
+        this(6000, 1000);
     }
 
 	public int getARMOR_LIGTHHUNTER() {

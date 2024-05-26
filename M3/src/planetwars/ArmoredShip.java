@@ -17,7 +17,7 @@ public class ArmoredShip extends Ship{
 	
 	// Segundo contructor
     public ArmoredShip() {
-        this(1000, 50);
+        this(8000, 700);
     }
 
 	public int getARMOR_ARMOREDSHIP() {
