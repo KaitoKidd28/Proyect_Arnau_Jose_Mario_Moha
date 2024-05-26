@@ -2,7 +2,7 @@ package planetwars;
 
 import java.util.ArrayList;
 
-public class Battle {
+public class Battle implements Variables {
 	// Para almacenar la flota enemiga.
 	private ArrayList<MilitaryUnit>[] planetArmy;
 
@@ -53,64 +53,78 @@ public class Battle {
 	public void initInitialArmies() {
 		for (int i = 0; i < 2; i++) {
 			for (int j = 0; j < 7; j++) {
-				if (i == 0) {
-					initialArmies[i][j] = actualNumberUnitsPlanet[j];
+				if (armies[i][j] == null) {
+					initialArmies[i][j] = 0;
 				} else {
-					initialArmies[i][j] = actualNumberUnitsEnemy[j];
+					initialArmies[i][j] = armies[i][j].size();
 				}
-
 			}
 		}
 	}
 
 	public void updateResourcesLooses() {
-		for (int i = 0; i < 2; i++) {
-			for (int j = 0; j < 3; j++) {
-				resourcesLooses[i][j] = 0;
+
+	}
+
+	public void fleetResourceCost(ArrayList<MilitaryUnit>[] army) {
+		int totalMetal = 0;
+		int totalDeuterium = 0;
+
+		for (int i = 0; i < army.length; i++) {
+			totalMetal += army[i].size() * METAL_COST_UNITS[i];
+			totalDeuterium += army[i].size() * DEUTERIUM_COST_UNITS[i];
+		}
+
+		if (army.length == 7) {
+			initialCostFleet[0][0] = totalMetal;
+			initialCostFleet[0][1] = totalDeuterium;
+		} else {
+			initialCostFleet[1][0] = totalMetal;
+			initialCostFleet[1][1] = totalDeuterium;
+		}
+	}
+
+	public void initialFleetNumber(ArrayList<MilitaryUnit>[] army) {
+		int total = 0;
+		for (int i = 0; i < army.length; i++) {
+			if (army[i] == null) {
+				total += 0;
+			} else {
+				total += army[i].size();
 			}
 		}
 
-		for (int i = 0; i < 2; i++) {
-			for (int j = 0; j < 7; j++) {
-				resourcesLooses[i][0] += initialCostFleet[i][0] * (initialArmies[i][j] - actualNumberUnitsPlanet[j]);
-				resourcesLooses[i][1] += initialCostFleet[i][1] * (initialArmies[i][j] - actualNumberUnitsPlanet[j]);
-			}
+		if (army.length == 7) {
+			initialNumberUnitsPlanet = total;
+		} else {
+			initialNumberUnitsEnemy = total;
 		}
 
-		resourcesLooses[0][2] = resourcesLooses[0][0] + 5 * resourcesLooses[0][1];
-		resourcesLooses[1][2] = resourcesLooses[1][0] + 5 * resourcesLooses[1][1];
-	}
-
-	public int[] fleetResourceCost(ArrayList<MilitaryUnit>[] army) {
-		 int totalMetalCost = 0;
-         int totalDeuteriumCost = 0;
-
-         for (ArrayList<MilitaryUnit> unitList : army) {
-             for (MilitaryUnit unit : unitList) {
-                 totalMetalCost += unit.getMetalCost();
-                 totalDeuteriumCost += unit.getDeuteriumCost();
-             }
-         }
-
-         return new int[] { totalMetalCost, totalDeuteriumCost };
-	}
-
-	public int[] initialFleetNumber(ArrayList<MilitaryUnit>[] army) {
-		 int[] unitCounts = new int[army.length]; // Array para almacenar la cantidad de cada tipo de unidad
-
-		    for (int i = 0; i < army.length; i++) {
-		        unitCounts[i] = army[i].size();
-		    }
-
-		    return unitCounts;
 	}
 
 	public int remainderPercentageFleet(ArrayList<MilitaryUnit>[] army) {
-		return -1;
+		int flotaRestante = 0;
+		int result = 0;
+		for (int i = 0; i < army.length; i++) {
+			if (army[i] != null) {
+				flotaRestante += army[i].size();
+			}
+		}
+
+		if (army.length == 7) {
+			result = (flotaRestante * 100) / initialNumberUnitsPlanet;
+		} else {
+			result = (flotaRestante * 100) / initialNumberUnitsEnemy;
+		}
+		return result;
 	}
 
 	public int getGroupDefender(ArrayList<MilitaryUnit>[] army) {
-		return -1;
+		int [] percentages = new int[army.length];
+		for (int i = 0; i < army.length; i++) {
+			percentages[i] = 100 * (army[i].size()) / initialNumberUnitsPlanet;
+		}
+		return 1;
 	}
 
 	public int getPlanetGroupAttacker() {

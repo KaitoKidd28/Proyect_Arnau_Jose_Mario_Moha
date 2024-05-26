@@ -178,9 +178,7 @@ public class Main {
 				salir = false;
 				break;
 			case 4:
-				System.out.println("Opcion no acabada.");
-				break;
-
+				
 			case 0:
 				salir = true;
 				break;
