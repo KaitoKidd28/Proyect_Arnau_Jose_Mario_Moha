@@ -3,8 +3,8 @@ package planetwars;
 import java.util.Scanner;
 
 public class Comprobacion {
+	private Scanner sc = new Scanner(System.in);
 	public int comprobarNumero() {
-        Scanner sc = new Scanner(System.in);
         int option = 100;
         String cadena = "";
         if (!sc.hasNextInt()) {
@@ -19,4 +19,7 @@ public class Comprobacion {
         }
         return option;
     }
+	public void parar() {
+		sc.close();
+	}
 }

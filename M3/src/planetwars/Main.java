@@ -5,6 +5,11 @@ import java.util.Scanner;
 import java.util.Timer;
 import java.util.TimerTask;
 import planetwars.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 public class Main implements Variables{
 	private Planet planeta;
 	private Battle pelea;
@@ -51,8 +56,8 @@ public class Main implements Variables{
 		planet.newPlasmaCannon(1);
 		Timer timer = new Timer();
 		programa.timers();
-		// 60000,60000
-		timer.schedule(programa.task1, 1000,1000);
+		// 180000,180000
+		timer.schedule(programa.task1, 60000,60000);
         timer.schedule(programa.task2, 180000,180000);
         timer.schedule(programa.task3, 120000,180000);
 		
@@ -65,29 +70,12 @@ public class Main implements Variables{
 		final String menu04 = "Battle Reports\nThere is not reports to read";
 		
 		boolean salir = false;
-//		System.out.println("Inicializando el ejército del planeta en la batalla...");
-//		pelea.setPlanetArmy(planet.getArmy());
-//		System.out.println("Inicializando ejércitos en la batalla...");
-//		pelea.iniciarArmies();
-//		System.out.println("Creando el ejército enemigo...");
-//		programa.createEnemyArmy();
-//		if (pelea.getPlanetArmy() == null || pelea.getEnemyArmy() == null) {
-//	        System.out.println("Error: Ejércitos no inicializados correctamente.");
-//	    }
-//		System.out.println("Iniciando la batalla...");
-//		Thread battleThread = new Thread(() -> {
-//	        System.out.println("Iniciando la batalla...");
-//	        programa.battle();
-//	        System.out.println("AAA");
-//	    });
-//	    battleThread.start();
 	    programa.setMenuMostrar(programa.menu00);
 		Comprobacion comprobacion = new Comprobacion();
 
 		while (!salir) {
 			System.out.println(programa.menuMostrar);
 			System.out.println("Option > ");
-			// timer.schedule(task, 180000);
 			int option = comprobacion.comprobarNumero();
 			switch (option) {
 			case 1:
@@ -220,9 +208,21 @@ public class Main implements Variables{
 			case 4:
 				System.out.println(menu04);
 				break;
+			case 5:
+				if (programa.flg_00 & programa.nosAtacan) {
+					programa.ViewThreat();
+					break;	
+				}
+				else {
+					System.out.println("Incorrect option");
+					break;
+				}
 			case 0:
+				timer.cancel();
+				comprobacion.parar();
 				salir = true;
 				break;
+				
 			default:
 				System.out.println("\nOpcion incorrecta\n");
 			}
@@ -232,39 +232,92 @@ public class Main implements Variables{
 // ------------------------------------------------------------------------------------------
 	
 	public void createEnemyArmy() {
-		int recursosMetal = METAL_BASE_ENEMY_ARMY;
-	    int recursosDeuterium = DEUTERIUM_BASE_ENEMY_ARMY;
+		int recursosMetal = metalEnemigo;
+	    int recursosDeuterium = deuterioEnemigo;
 	    int[] porcentajesEnemy = {35, 25, 20, 20};
+	    int total = 0;
+	    
 	    ArrayList<MilitaryUnit>[] enemyArmy = new ArrayList[4];
-	    for (int i = 0; i < enemyArmy.length;i++) {
+	    for (int i= 0; i < enemyArmy.length; i++) {
 	    	enemyArmy[i] = new ArrayList<MilitaryUnit>();
+	    	
 	    }
-	    while (recursosMetal >= METAL_COST_LIGTHHUNTER & recursosDeuterium >= DEUTERIUM_COST_LIGTHHUNTER) {
-	    	int randNum = (int)Math.random()*100;
-	        if (randNum <= porcentajesEnemy[0] & recursosMetal >= METAL_COST_LIGTHHUNTER & recursosDeuterium >= DEUTERIUM_COST_LIGTHHUNTER) {
-	            enemyArmy[0].add(new LigthHunter());
-	            recursosMetal -= METAL_COST_LIGTHHUNTER;
-	            recursosDeuterium -= DEUTERIUM_COST_LIGTHHUNTER;
-	        } else if (randNum <= (porcentajesEnemy[0] + porcentajesEnemy[1]) & recursosMetal >= METAL_COST_HEAVYHUNTER & recursosDeuterium >= DEUTERIUM_COST_HEAVYHUNTER) {
-	            enemyArmy[1].add(new HeavyHunter());
-	            recursosMetal -= METAL_COST_HEAVYHUNTER;
-	            recursosDeuterium -= DEUTERIUM_COST_HEAVYHUNTER;
-	        } else if (randNum <= (porcentajesEnemy[0] + porcentajesEnemy[1] + porcentajesEnemy[2]) & recursosMetal >= METAL_COST_BATTLESHIP & recursosDeuterium >= DEUTERIUM_COST_BATTLESHIP) {
-	            enemyArmy[2].add(new BattleShip());
-	            recursosMetal -= METAL_COST_BATTLESHIP;
-	            recursosDeuterium -= DEUTERIUM_COST_BATTLESHIP;
-	        } else if (randNum <= (porcentajesEnemy[0] + porcentajesEnemy[1] + porcentajesEnemy[2] + porcentajesEnemy[3]) & recursosMetal >= METAL_COST_ARMOREDSHIP & recursosDeuterium >= DEUTERIUM_COST_ARMOREDSHIP) {
-	            enemyArmy[3].add(new ArmoredShip());
-	            recursosMetal -= METAL_COST_ARMOREDSHIP;
-	            recursosDeuterium -= DEUTERIUM_COST_ARMOREDSHIP;
-	        }
-	    }
-	    metalEnemigo += 30000;
-	    deuterioEnemigo += 15000;
-	    pelea.setEnemyArmy(enemyArmy.clone());
+	    
+        while (recursosMetal >= METAL_COST_LIGTHHUNTER & recursosDeuterium >= DEUTERIUM_COST_LIGTHHUNTER) {
+            int randNum =  (int)(Math.random()*100);
+            total = 0;
+            boolean seleccionado = false;
+            for (int i = 0; i < porcentajesEnemy.length; i++) {
+            	total += porcentajesEnemy[i];
+            	if(total >= randNum) {
+            	 if (i == 0 & !seleccionado & recursosMetal >= METAL_COST_LIGTHHUNTER & recursosDeuterium >= DEUTERIUM_COST_LIGTHHUNTER) {
+                     enemyArmy[0].add(new LigthHunter());
+                     recursosMetal -= METAL_COST_LIGTHHUNTER;
+                     recursosDeuterium -= DEUTERIUM_COST_LIGTHHUNTER;
+                     seleccionado = true;
+                 } else if (i == 1 &  !seleccionado & recursosMetal >= METAL_COST_HEAVYHUNTER & recursosDeuterium >= DEUTERIUM_COST_HEAVYHUNTER) {
+                     enemyArmy[1].add(new HeavyHunter());
+                     recursosMetal -= METAL_COST_HEAVYHUNTER;
+                     recursosDeuterium -= DEUTERIUM_COST_HEAVYHUNTER;
+                     seleccionado = true;
+                 } else if ( i == 2 &  !seleccionado &   recursosMetal >= METAL_COST_BATTLESHIP & recursosDeuterium >= DEUTERIUM_COST_BATTLESHIP) {
+                     enemyArmy[2].add(new BattleShip());
+                     recursosMetal -= METAL_COST_BATTLESHIP;
+                     recursosDeuterium -= DEUTERIUM_COST_BATTLESHIP;
+                     seleccionado = true;
+                 } else if ( i == 3 &    !seleccionado &  recursosMetal >= METAL_COST_ARMOREDSHIP & recursosDeuterium >= DEUTERIUM_COST_ARMOREDSHIP) {
+                     enemyArmy[3].add(new ArmoredShip());
+                     recursosMetal -= METAL_COST_ARMOREDSHIP;
+                     recursosDeuterium -= DEUTERIUM_COST_ARMOREDSHIP;
+                     seleccionado = true;
+                 } 
+            	}
+            	}
+            }
+        metalEnemigo += 40000;
+        deuterioEnemigo += 20000;
+
+        pelea.setEnemyArmy(enemyArmy.clone());
+            	}
+	
+//	public void createEnemyArmy() {
+//		int recursosMetal = METAL_BASE_ENEMY_ARMY;
+//	    int recursosDeuterium = DEUTERIUM_BASE_ENEMY_ARMY;
+//	    int[] porcentajesEnemy = {35, 25, 20, 20};
+//	    ArrayList<MilitaryUnit>[] enemyArmy = new ArrayList[4];
+//	    for (int i = 0; i < enemyArmy.length;i++) {
+//	    	enemyArmy[i] = new ArrayList<MilitaryUnit>();
+//	    }
+//	    while (recursosMetal >= METAL_COST_LIGTHHUNTER & recursosDeuterium >= DEUTERIUM_COST_LIGTHHUNTER) {
+//	    	int randNum = (int)Math.random()*100;
+//	        if (randNum <= porcentajesEnemy[0] & recursosMetal >= METAL_COST_LIGTHHUNTER & recursosDeuterium >= DEUTERIUM_COST_LIGTHHUNTER) {
+//	            enemyArmy[0].add(new LigthHunter());
+//	            recursosMetal -= METAL_COST_LIGTHHUNTER;
+//	            recursosDeuterium -= DEUTERIUM_COST_LIGTHHUNTER;
+//	        } else if (randNum <= (porcentajesEnemy[0] + porcentajesEnemy[1]) & recursosMetal >= METAL_COST_HEAVYHUNTER & recursosDeuterium >= DEUTERIUM_COST_HEAVYHUNTER) {
+//	            enemyArmy[1].add(new HeavyHunter());
+//	            recursosMetal -= METAL_COST_HEAVYHUNTER;
+//	            recursosDeuterium -= DEUTERIUM_COST_HEAVYHUNTER;
+//	        } else if (randNum <= (porcentajesEnemy[0] + porcentajesEnemy[1] + porcentajesEnemy[2]) & recursosMetal >= METAL_COST_BATTLESHIP & recursosDeuterium >= DEUTERIUM_COST_BATTLESHIP) {
+//	            enemyArmy[2].add(new BattleShip());
+//	            recursosMetal -= METAL_COST_BATTLESHIP;
+//	            recursosDeuterium -= DEUTERIUM_COST_BATTLESHIP;
+//	        } else if (randNum <= (porcentajesEnemy[0] + porcentajesEnemy[1] + porcentajesEnemy[2] + porcentajesEnemy[3]) & recursosMetal >= METAL_COST_ARMOREDSHIP & recursosDeuterium >= DEUTERIUM_COST_ARMOREDSHIP) {
+//	            enemyArmy[3].add(new ArmoredShip());
+//	            recursosMetal -= METAL_COST_ARMOREDSHIP;
+//	            recursosDeuterium -= DEUTERIUM_COST_ARMOREDSHIP;
+//	        }
+//	    }
+//	    metalEnemigo += 30000;
+//	    deuterioEnemigo += 15000;
+//	    pelea.setEnemyArmy(enemyArmy.clone());
+//	}
+	
+	public void ViewThreat() {
+		String datos = String.format("NEW THREAT COMING\n\nLigth Hunter:			%d\nHeavyHunter:			%d\nBattle Ship:			%d\nArmored Ship			%d", 
+				pelea.getEnemyArmy()[0].size(),pelea.getEnemyArmy()[1].size(), pelea.getEnemyArmy()[2].size(),pelea.getEnemyArmy()[3].size() );
+		System.out.println(datos);
 	}
-	
-	
 	
 	public void battle() {
 	    pelea = new Battle(); // Asegúrate de inicializar enemyArmy
@@ -373,12 +426,21 @@ public class Main implements Variables{
 
 			 public void run()
 			 {
+				 Comprobacion comprobacion = new Comprobacion();
 				 nosAtacan = true;
 				 System.out.println("\n\nNEW THREAD IS COMMING");
 				 menuMostrar = menu05;
 				 createEnemyArmy();
 				 if (flg_00) {
+					 int option = 0;
 					 System.out.println(menuMostrar);
+					 System.out.println("Option > ");
+					 option = comprobacion.comprobarNumero();
+					 switch(option) {
+					 case 5:
+						 ViewThreat();
+						 break;
+					 }
 				 }
 			 }
 			 };	
@@ -391,7 +453,7 @@ public class Main implements Variables{
 				 System.out.println("\n\nWE HAVE BEEN ATTACKED!!!");
 				 menuMostrar = menu00;
 				 if (flg_00) {
-					 System.out.println(menuMostrar);
+					 System.out.println();
 				 }
 			 }
 			 };	
