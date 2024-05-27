@@ -545,8 +545,6 @@ public class Main implements Variables{
 	public void setMenuMostrar(String menuMostrar) {
 		this.menuMostrar = menuMostrar;
 	}
-	
-	
 }
 
 	
