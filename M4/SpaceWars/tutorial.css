@@ -61,11 +61,11 @@ nav ul li a:hover {
     background-size: cover;
     color: white;
     text-align: center;
-    padding: 50px 0;
+    padding: 140px 0; 
 }
 
 .title h1 {
-    font-size: 4em;
+    font-size: 5em; 
 }
 
 /* Sección de opciones */
@@ -135,11 +135,13 @@ nav ul li a:hover {
 /* Contenido del tutorial */
 .tutorial-content {
     padding: 20px;
+    background-color: #000000;
 }
 
 .tutorial-content h2 {
     text-align: center;
     margin-bottom: 20px;
+    color: white;
 }
 
 .tutorial-box {
@@ -151,7 +153,7 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     max-width: 800px; 
-    position: relative; /* Añadido */
+    position: relative; 
 }
 
 .tutorial-image {
@@ -198,7 +200,7 @@ footer {
 }
 
 .hover-image {
-    width: 30%; 
+    width: 35%; 
     height: auto; 
     top: 50%; 
     left: 50%; 
