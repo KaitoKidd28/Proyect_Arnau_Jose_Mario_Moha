@@ -28,6 +28,8 @@ public class Main implements Variables{
 		this.pelea = new Battle();
 	}
 	public static void main(String[] args) throws ResourceException {
+		OracleJavaJDBC conexion = new OracleJavaJDBC();
+		conexion.conectar();
 		Main programa = new Main();
 		Planet planet = programa.getPlanet();
 		Battle pelea = programa.getPelea();
@@ -56,7 +58,6 @@ public class Main implements Variables{
 		planet.newPlasmaCannon(1);
 		Timer timer = new Timer();
 		programa.timers();
-		// 180000,180000
 		timer.schedule(programa.task1, 60000,60000);
         timer.schedule(programa.task2, 180000,180000);
         timer.schedule(programa.task3, 120000,180000);
@@ -220,6 +221,7 @@ public class Main implements Variables{
 			case 0:
 				timer.cancel();
 				comprobacion.parar();
+				conexion.insertar(planet.getMetal(), planet.getDeuterium(), planet.getTechnologyDefense(), planet.getTechnologyAtack(), planet.getArmy()[4].size(), planet.getArmy()[5].size(), planet.getArmy()[6].size(), planet.getArmy()[0].size(), planet.getArmy()[1].size(), planet.getArmy()[2].size(), planet.getArmy()[3].size());
 				salir = true;
 				break;
 				
