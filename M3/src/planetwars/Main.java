@@ -14,7 +14,7 @@ public class Main implements Variables{
 	private TimerTask task2;
 	private TimerTask task3;
 	private final String menu00 = "\n1)View Planet Stats\n2)Build\n3)Upgrade Technology\n4)View Battle Reports\n0)Exit";
-	private final String menu05 = "Main Menu\n1)View Planet Stats\n2)Build\n3)Upgrade Technology\n4)View Battle Reports\n5)View Thread Comming\n0)Exit";
+	private final String menu05 = "\nMain Menu\n1)View Planet Stats\n2)Build\n3)Upgrade Technology\n4)View Battle Reports\n5)View Thread Comming\n0)Exit";
 	private boolean flg_00 = true;
 	private boolean nosAtacan = false;
 	private String menuMostrar = "";
@@ -51,9 +51,10 @@ public class Main implements Variables{
 		planet.newPlasmaCannon(1);
 		Timer timer = new Timer();
 		programa.timers();
-		timer.schedule(programa.task1, 120000,180000);
+		// 60000,60000
+		timer.schedule(programa.task1, 1000,1000);
         timer.schedule(programa.task2, 180000,180000);
-        timer.schedule(programa.task3, 60000,60000);
+        timer.schedule(programa.task3, 120000,180000);
 		
 		// ---------------------------------------------------------
         
@@ -64,22 +65,22 @@ public class Main implements Variables{
 		final String menu04 = "Battle Reports\nThere is not reports to read";
 		
 		boolean salir = false;
-		System.out.println("Inicializando el ejército del planeta en la batalla...");
-		pelea.setPlanetArmy(planet.getArmy());
-		System.out.println("Inicializando ejércitos en la batalla...");
-		pelea.iniciarArmies();
-		System.out.println("Creando el ejército enemigo...");
-		programa.createEnemyArmy();
-		if (pelea.getPlanetArmy() == null || pelea.getEnemyArmy() == null) {
-	        System.out.println("Error: Ejércitos no inicializados correctamente.");
-	    }
-		System.out.println("Iniciando la batalla...");
-		Thread battleThread = new Thread(() -> {
-	        System.out.println("Iniciando la batalla...");
-	        programa.battle();
-	        System.out.println("AAA");
-	    });
-	    battleThread.start();
+//		System.out.println("Inicializando el ejército del planeta en la batalla...");
+//		pelea.setPlanetArmy(planet.getArmy());
+//		System.out.println("Inicializando ejércitos en la batalla...");
+//		pelea.iniciarArmies();
+//		System.out.println("Creando el ejército enemigo...");
+//		programa.createEnemyArmy();
+//		if (pelea.getPlanetArmy() == null || pelea.getEnemyArmy() == null) {
+//	        System.out.println("Error: Ejércitos no inicializados correctamente.");
+//	    }
+//		System.out.println("Iniciando la batalla...");
+//		Thread battleThread = new Thread(() -> {
+//	        System.out.println("Iniciando la batalla...");
+//	        programa.battle();
+//	        System.out.println("AAA");
+//	    });
+//	    battleThread.start();
 	    programa.setMenuMostrar(programa.menu00);
 		Comprobacion comprobacion = new Comprobacion();
 
@@ -225,7 +226,6 @@ public class Main implements Variables{
 			default:
 				System.out.println("\nOpcion incorrecta\n");
 			}
-			timer.cancel();
 		}
 	}
 	
