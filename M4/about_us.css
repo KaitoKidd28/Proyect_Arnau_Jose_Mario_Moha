@@ -10,7 +10,7 @@ main {
 .about-us h1 {
     font-size: 2.5em;
     margin-bottom: 20px;
-    color: #333;
+    color: #ffffff;
 }
 
 .team {
@@ -72,5 +72,5 @@ main>p {
 
 .team-member p {
     font-size: 1em;
-    color: #666;
+    color: #171717;
 }
