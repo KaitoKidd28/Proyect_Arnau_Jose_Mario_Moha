@@ -1,0 +1,99 @@
+
+main {
+    padding: 8px;
+    background: url('img/backg_main.avif') no-repeat center center/cover;
+}
+/* Estilo para el título h2 dentro de main */
+main h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Estilo para el formulario dentro de main */
+main form {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 445px;
+    background-color: #7b7b7b;
+    max-width: 800px;
+    width: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-left: 350px;
+}
+
+/* Estilo para el fieldset y legend del formulario */
+main form fieldset {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 0;
+}
+
+main form legend {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+/* Estilo para cada grupo de formulario */
+main .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilo para las etiquetas del formulario */
+main .form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Estilo para los inputs y textarea del formulario */
+main .form-group input,
+main .form-group textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+}
+
+/* Estilo para el botón de envío del formulario */
+main button[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+/* Cambio de color en hover para el botón de envío */
+main button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para mensajes de error o requeridos */
+main .form-group input:invalid,
+main .form-group textarea:invalid {
+    border-color: #e74c3c;
+}
+
+/* Mensaje de error */
+main .form-group input:invalid:focus,
+main .form-group textarea:invalid:focus {
+    outline: none;
+    border-color: #e74c3c;
+    box-shadow: 0 0 5px rgba(231, 76, 60, 0.5);
+}
+
+/* Estilo para el mensaje de formulario */
+#form-message {
+    margin-top: 20px;
+    font-size: 16px;
+    text-align: center;
+}
