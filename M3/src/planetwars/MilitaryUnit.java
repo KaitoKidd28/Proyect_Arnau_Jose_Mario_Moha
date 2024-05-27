@@ -1,11 +1,11 @@
-package PlanetWars;
+package planetwars;
 
 public interface MilitaryUnit {
 	// Nos devolverá el poder de ataque que tenga la unidad.
 	public abstract int attack();
 	
 	// Restará a nuestro blindaje el daño recibido por parámetro.
-	//public abstract void tekeDamage(int receivedDamage) {
+	public abstract void tekeDamage(int receivedDamage);
 	
 	// Nos devolverá el blindaje que tengamos actualmente, después de haber recibido un ataque. 
 	public 	abstract int getAcualArmor();
@@ -24,6 +24,5 @@ public interface MilitaryUnit {
 	
 	// Nos restablecerá nuestro blindaje a su valor original.
 	public abstract void resetArmor();
-		
+	
 }
-
