@@ -1,0 +1,217 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, 'Times New Roman', Times, serif;
+    line-height: 1.6;
+    background-color: #000000; 
+    color: #fff; 
+    margin: 0 20px; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Encabezado */
+.logo-container {
+    text-align: center;
+}
+
+.menu {
+    text-align: center;
+}
+
+.menu li {
+    margin-right: 5px; 
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 9px; 
+    display: block;
+    font-size: 0.9em; 
+}
+
+.menu li a:hover {
+    background-color: #444;
+    color: #ffcc00; 
+}
+
+header {
+    background-color: #0a0a0a;
+    color: #fff;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-right: 5px; 
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 9px; 
+    display: block;
+    font-size: 0.9em; 
+}
+
+nav ul li a:hover {
+    background-color: #444;
+    color: #ffcc00; 
+}
+
+.logo {
+    width: 65px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+/* Contenido principal */
+main {
+    padding-top: 80px; 
+    position: relative; 
+    flex: 1;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 40px;
+    background-image: url("imgs/fondo_galaxia.jpg"); 
+    background-size: cover;
+    padding: 20px;
+    font-size: 2.5em; 
+}
+
+/* Sección sobre nosotros */
+.about-us {
+    margin-bottom: 40px;
+    text-align: center; 
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.about-us h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #3953d2;
+}
+
+.about-us p {
+    font-size: 1.2em;
+    line-height: 1.8;
+}
+
+/* Sección miembros del equipo */
+.team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 -10px; 
+}
+
+.team-member {
+    width: calc(50% - 20px); 
+    margin-bottom: 20px;
+    padding: 0 10px; 
+    display: flex;
+    justify-content: center; 
+}
+
+.member-box {
+    background-color: #444;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%; 
+    transition: transform 0.3s; 
+}
+
+.member-box:hover {
+    transform: scale(1.1); 
+}
+
+.member-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 15px; 
+}
+
+/* Pie de página */
+footer {
+    background: #000000;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    margin-top: auto;
+}
+
+/* Adaptación para movil */
+@media screen and (max-width: 768px) {
+    .logo-container {
+        margin-bottom: 20px; 
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu li {
+        margin: 5px 0; 
+    }
+
+    /* Ajustes específicos para móviles */
+    .team-members {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-member {
+        width: 80%; 
+    }
+
+    .member-box {
+        padding: 10px;
+        width: 100%;
+    }
+
+    .member-image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .member-info h2 {
+        font-size: 1.5em;
+    }
+
+    .member-info p {
+        font-size: 0.9em;
+    }
+}

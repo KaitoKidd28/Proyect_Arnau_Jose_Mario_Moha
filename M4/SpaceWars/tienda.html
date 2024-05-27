@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOP</title>
+    <link rel="stylesheet" href="tienda.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="imgs/logo.jpg" alt="Saturno" class="logo">
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="principal.html">Home</a></li>
+                <li><a href="tutorial.html">Tutorial</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="tienda.html">Merchandising</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="principal">
+            <div class="title">
+                <h1>Shop</h1>
+            </div>
+        </section>
+        <section id="tienda">
+            <h2>Available products</h2>
+            
+            <div class="filter-buttons">
+                <button onclick="filterProducts('all')">All</button>
+                <button onclick="filterProducts('available')">Available</button>
+                <button onclick="filterProducts('coming-soon')">Coming Soon</button>
+            </div>
+            
+            <div class="product-grid available">
+                <div class="product-card">
+                    <img src="imgs/Camiseta.jpg" alt="Producto 1" class="product-image">
+                    <div class="product-info">
+                        <h2 class="product-title">T-Shirt</h2>
+                        <p class="product-price">23.50€</p>
+                        <p class="product-description">Technique: Embroidery</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="imgs/Gorra.png" alt="Producto 2" class="product-image">
+                    <div class="product-info">
+                        <h2 class="product-title">Cap</h2>
+                        <p class="product-price">12.50€</p>
+                        <p class="product-description">Technique: Embroidery.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="imgs/Sudadera_negra.png" alt="Producto 3" class="product-image">
+                    <div class="product-info">
+                        <h2 class="product-title">Black Sweatshirt</h2>
+                        <p class="product-price">30€</p>
+                        <p class="product-description">Unisex eco hoodie | SOL'S 03568.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="imgs/Funda.png" alt="Producto 4" class="product-image">
+                    <div class="product-info">
+                        <h2 class="product-title">Funda para Iphone 15</h2>
+                        <p class="product-price">14,75€</p>
+                        <p class="product-description">Mobile case for iPhone 15.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-grid coming-soon">
+                <div class="product-card">
+                    <img src="imgs/funda_ordenador.png" alt="Producto 5" class="product-image">
+                    <div class="product-info">
+                        <h2 class="product-title">Laptop Sleeve</h2>
+                        <p class="product-price">16,50€</p>
+                        <p class="product-description">Technique: Sublimation.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="imgs/Bolsa.png" alt="Producto 6" class="product-image">
+                    <div class="product-info">
+                        <h2 class="product-title">Bag</h2>
+                        <p class="product-price">12,75€</p>
+                        <p class="product-description">Organic cotton bag | Econscious EC8000.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="imgs/mochila.jpg" alt="Producto 7" class="product-image">
+                    <div class="product-info">
+                        <h2 class="product-title">Schoolbag</h2>
+                        <p class="product-price">31,95€</p>
+                        <p class="product-description">Technique: Cut and sew by sublimation.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="imgs/Alfombrilla.jpg" alt="Producto 8" class="product-image">
+                    <div class="product-info">
+                        <h2 class="product-title">Mouse Pad</h2>
+                        <p class="product-price">7,95€</p>
+                        <p class="product-description">Size: 8.7"x7.1".</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="imgs/taza.png" alt="Producto 9" class="product-image">
+                    <div class="product-info">
+                        <h2 class="product-title">Glossy Mug</h2>
+                        <p class="product-price">6,95€</p>
+                        <p class="product-description">Glossy white mug.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="imgs/libreta.png" alt="Producto 10" class="product-image">
+                    <div class="product-info">
+                        <h2 class="product-title">Hardcover Bound Notebook</h2>
+                        <p class="product-price">12,25€</p>
+                        <p class="product-description">Hardcover Notebook | JournalBook®.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="imgs/gorrito.png" alt="Producto 11" class="product-image">
+                    <div class="product-info">
+                        <h2 class="product-title">Organic bucket hat</h2>
+                        <p class="product-price">17,95€</p>
+                        <p class="product-description">Organic fisherman hat.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>2024 - Page made with HTML</p>
+    </footer>
+    
+    <script src="tienda.js"></script>
+</body>
+</html>

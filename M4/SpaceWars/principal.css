@@ -1,0 +1,271 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, 'Times New Roman', Times, serif;
+    line-height: 1.6;
+    overflow-y: scroll; 
+    height: 100vh; 
+}
+
+/* Encabezado */
+header {
+    background-color: #000000;
+    color: #fff;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative; 
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-right: 5px; 
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 9px; 
+    display: block;
+    font-size: 0.9em; 
+}
+
+nav ul li a:hover {
+    background-color: #444;
+    color: #ffcc00; 
+}
+
+.logo {
+    width: 65px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+/* Contenido principal */
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px; 
+}
+
+.menu {
+    text-align: center;
+}
+
+.menu li {
+    margin-right: 5px; 
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 9px; 
+    display: block;
+    font-size: 0.9em; 
+}
+
+.menu li a:hover {
+    background-color: #444;
+    color: #ffcc00; 
+}
+
+main {
+    padding-top: 0px; 
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding-bottom: 2%;
+    min-height: calc(100vh - 60px); 
+}
+
+section {
+    margin-bottom: 4%;
+}
+
+.section2 {
+    display: flex; 
+    gap: 20px;
+}
+
+.section2 p {
+    margin: 20px; 
+}
+
+.column {
+    flex: 1; 
+    padding: 20px; 
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+}
+
+.izquierda {
+    flex: 1.5;
+    font-size: 1.2em; 
+}
+
+.derecha {
+    flex: 1; 
+}
+
+.imagen-columna {
+    width: 100%; 
+    height: 90%; 
+}
+
+#github-button {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.github-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.github-btn:hover {
+    background-color: #555;
+}
+
+.github-logo {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+h1 {
+    font-size: 130px;
+    color: white; 
+    text-align: center;
+    font-family: 'FuenteTitulo', sans-serif;
+}
+
+.title {
+    display: flex; 
+    color: white;
+    background-image: url("imgs/fondo_galaxia.jpg");
+    background-size: cover;
+    height: 600px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.rocket {
+    position: absolute;
+    bottom: -320px; 
+    left: 10px; 
+    width: 50px; 
+    height: 50px; 
+    transform: rotate(-90deg); 
+    animation: moveUp 7s forwards;
+}
+
+@keyframes moveUp {
+    0% {
+        transform: translateY(0) rotate(-45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(-45deg); 
+        opacity: 0;
+    }
+}
+
+/* Pie de página */
+footer {
+    background: radial-gradient(circle, #000000 10%, transparent 60%), #000000;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Animación */
+#principal {
+    animation: fadeIn ease 3s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@font-face {
+    font-family: 'FuenteTitulo';
+    src: url('imgs/ka1.ttf') format('truetype');
+}
+
+@media screen and (max-width: 768px) {
+    .rocket {
+        display: none;
+    }
+    h1 {
+        font-size: 50px;
+    }
+    .logo-container {
+        margin-bottom: 0; 
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu li {
+        margin: 5px 0; 
+    }
+
+    .section2 {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .column {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .imagen-columna {
+        width: 100%;
+        height: auto;
+    }
+
+    .section2 p {
+        margin: 10px 0;
+        font-size: 14px;
+    }
+
+    .izquierda, .derecha {
+        flex: 1;
+    }
+}
