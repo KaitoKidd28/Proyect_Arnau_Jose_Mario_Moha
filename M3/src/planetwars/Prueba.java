@@ -30,16 +30,16 @@ public class Prueba {
 //        System.out.println(total);
 //        Battle battle = new Battle();
         
-//        Defense missileLauncher = new MissileLauncher();
-//        Ship heavyHunter = new HeavyHunter();
-//        Ship battleShip = new BattleShip();
-//        Ship armoredShip = new ArmoredShip();
+        Defense missileLauncher = new MissileLauncher();
+        Ship heavyHunter = new HeavyHunter();
+        Ship battleShip = new BattleShip();
+        Ship armoredShip = new ArmoredShip();
         
 
-//        System.out.println("Costo de deuterio para Missile Launcher: " + missileLauncher.getChanceGeneratinWaste());
-//        System.out.println("Costo de deuterio para Heavy Hunter: " + heavyHunter.getChanceAttackAgain());
-//        System.out.println("Costo de deuterio para Battle Ship: " + battleShip.getChanceAttackAgain());
-//        System.out.println("Costo de deuterio para Armored Ship: " + armoredShip.getChanceGeneratinWaste());
+        System.out.println("Costo de deuterio para Missile Launcher: " + missileLauncher.getChanceGeneratinWaste());
+        System.out.println("Costo de deuterio para Heavy Hunter: " + heavyHunter.getChanceAttackAgain());
+        System.out.println("Costo de deuterio para Battle Ship: " + battleShip.getChanceAttackAgain());
+        System.out.println("Costo de deuterio para Armored Ship: " + armoredShip.getChanceGeneratinWaste());
         
 	}
 }
