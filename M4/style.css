@@ -9,13 +9,18 @@ body {
 }
 
 .main-header {
-    background: url('wp8179245.webp') no-repeat center center/cover;
+    background: url('img/wp8179245.webp') no-repeat center center/cover;
     color: #fff;
     height: 500px;
     display: flex;
     flex-direction: column;
+    margin-bottom: 0.5px;
     
     
+}
+
+.main-header h1 {
+	margin-top: 92px;
 }
 
 .search-container {
@@ -80,23 +85,18 @@ form {
 
 .navbar {
     display: flex;
-    /* justify-content: unset; */
-    /* align-items: center; */
-    background-color: rgba(0, 0, 0, 0.5);
-    /* padding: 0px 12px; */
-    /* margin: -34px -13px; */
-    /* height: 77px; */
-}
-
-.nav {
+    background-color: rgba(0, 0, 0, 0.85);
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     width: 100%;
-    display: flex;
     justify-content: center;
-    /* align-items: center; */
     padding: 20px 50px;
-    background-color: rgba(0, 0, 0, 0.5);
     text-align: left;
 }
+
+
 
 .log {
     width: 30%;
@@ -104,7 +104,6 @@ form {
     justify-content: flex-end;
     align-items: center;
     padding: 27px 69px;
-    /* background-color: rgba(0, 0, 0, 0.5); */
 }
 
 .logo {
@@ -132,11 +131,17 @@ form {
     color: #fff;
     font-weight: bold;
     transition: color 0.3s;
+    padding: 20px;
+    /* margin: 0px; */
 }
 
 .nav-links a:hover {
     color: #00bfff;
-    background-color: yellow;
+    background-color: rgb(65, 65, 62);
+}
+
+.nav-links a.current {
+    border-bottom: 2px solid #00bfff;
 }
 
 .header-content {
@@ -166,12 +171,6 @@ form {
 .start-project-btn:hover {
     background-color: #007acc;
 }
-
-main{
-    padding: 120px 0px;
-}
-
-
 
 footer {
     background-color: #333;

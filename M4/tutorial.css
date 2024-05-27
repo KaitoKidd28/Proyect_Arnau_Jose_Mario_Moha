@@ -1,0 +1,112 @@
+
+
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: url('img/backg_main.avif') no-repeat center center/cover;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+main h1 {
+    color: #327dff;
+    text-align: center;
+}
+main h2, h3 {
+    color: #ffffff;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* Title Section */
+.title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Options Section */
+.options {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* Tutorial Content Section */
+.tutorial-content {
+    margin-bottom: 40px;
+}
+
+.tutorial-box {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tutorial-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.text-content {
+    flex: 1;
+    min-width: 200px;
+}
+
+p, ul, ol {
+    margin: 10px 0;
+}
+
+ul, ol {
+    padding-left: 20px;
+}
+
+/* Hover Image Styles */
+.hover-image {
+    display: none;
+}
+
+.tutorial-box:hover .hover-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+}

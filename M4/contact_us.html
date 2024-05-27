@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Design Lobby</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="about_us.css">
+    <link rel="stylesheet" href="contact_us.css">
 </head>
 <body>
     <header class="main-header">
@@ -35,12 +35,12 @@
         </div>
 
         <div class="navbar">
-            <ul class="nav-links">
-                <li><a href="index.html">Principal</a></li>
-                <li><a href="Tutorial.html">Tutorial</a></li>
-                <li><a href="about_us.html">About us</a></li>
-                <li><a href="contact_us.html">Contact Us</a></li>
-            </ul>
+                <ul class="nav-links">
+                    <li><a href="index.html">Principal</a></li>
+                    <li><a href="Tutorial.html">Tutorial</a></li>
+                    <li><a href="about_us.html">About us</a></li>
+                    <li><a href="contact_us.html">Contact Us</a></li>
+                </ul>
         </div>
         <div class="header-content">
             <h1>Planet wars proyecto</h1>
@@ -49,31 +49,31 @@
         </div>
     </header>
     
-    <main class="about-us">
-        <h1>About Us</h1>
-        <p>We are a team of students passionate about programming and web design. We are dedicated to creating incredible experiences for our users and we have made a video game with Java.</p>
-        <div class="team">
-            <div class="team-member">
-                <img src="img/perfil.webp" alt="Arnau Calvo Martos">
-                <h2>Arnau Calvo Martos</h2>
-                <p>Programador Java: Se encarga de la lógica del juego, implementando funcionalidades de interacción y dinámicas de juego atractivas para los usuarios.</p>
-            </div>
-            <div class="team-member">
-                <img src="img/perfil.webp" alt="Mohammad El Bourkhissi">
-                <h2>Mohammad El Bourkhissi</h2>
-                <p>Desarrollador HTML/CSS: Diseña la pagina web del juego, creando una experiencia visual atractiva y fácil de usar para los jugadores.</p>
-            </div>
-            <div class="team-member">
-                <img src="img/perfil.webp" alt="José Hurtado Tarrillo">
-                <h2>José Hurtado Tarrillo</h2>
-                <p>Programador Java: Experto en desarrollar la lógica del juego, implementando algoritmos eficientes.</p>
-            </div>
-            <div class="team-member">
-                <img src="img/perfil.webp" alt="Mario Pes Serradilla">
-                <h2>Mario Pes Serradilla</h2>
-                <p> Administra la persistencia de datos del juego, garantizando un almacenamiento eficiente y seguro de la información del jugador.</p>
-            </div>
-        </div>
+    <main>
+        <form id="contact-form">
+            <fieldset>
+                <legend>Contáctanos</legend>
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Asunto</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </fieldset>
+            
+        </form>
+        
     </main>
 
     <footer>

@@ -1,0 +1,76 @@
+main {
+    padding: 8px;
+    background: url('img/backg_main.avif') no-repeat center center/cover;
+}
+.about-us {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.about-us h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.team {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilos previos mantenidos */
+
+.team-member {
+    position: relative; /* Necesario para el efecto de borde */
+    overflow: hidden; /* Oculta el borde animado */
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Estilos para el borde animado */
+.team-member:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid transparent; /* Grosor y tipo de borde */
+    transition: border-color 0.3s; /* Transición para el color del borde */
+}
+
+.team-member:hover:before {
+    border-color: #3498db; /* Color del borde al pasar el cursor */
+}
+
+/* Efecto de zoom */
+.team-member:hover img {
+    transform: scale(1.1);
+}
+main>p {
+    margin: 20px;
+    color: beige;
+}
+
+.team-member img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.team-member h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.team-member p {
+    font-size: 1em;
+    color: #666;
+}

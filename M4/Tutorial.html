@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Design Lobby</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="tutorial.css">
 </head>
 <body>
     <header class="main-header">
 
         <div class="search-container">
             <div class="logo">
-                <img src="2-removebg-preview.png" alt="Design Lobby Logo">
+                <img src="img/logo.png" alt="Design Lobby Logo">
                 <span>planet wars</span>
             </div>
             <form>
@@ -19,9 +20,9 @@
                 <button type="submit" class="search-button">Buscar</button>
             </form>
             <div class="social-icons">
-                <a href="https://www.facebook.com" target="_blank" class="social-icon"><img src="facebook-logo.webp" alt="Facebook" class="icon-img"></a>
-                <a href="https://www.twitter.com" target="_blank" class="social-icon"><img src="x-logo.png" alt="Twitter" class="icon-img"></a>
-                <a href="https://www.instagram.com" target="_blank" class="social-icon"><img src="insta-logo1-removebg-preview.png" alt="Instagram" class="icon-img"></a>
+                <a href="https://www.facebook.com" target="_blank" class="social-icon"><img src="img/facebook-logo.webp" alt="Facebook" class="icon-img"></a>
+                <a href="https://www.twitter.com" target="_blank" class="social-icon"><img src="img/x-logo.png" alt="Twitter" class="icon-img"></a>
+                <a href="https://www.instagram.com" target="_blank" class="social-icon"><img src="img/insta-logo1-removebg-preview.png" alt="Instagram" class="icon-img"></a>
             </div>
 
             <div class="log">
@@ -34,16 +35,12 @@
         </div>
 
         <div class="navbar">
-            
-            <div class="nav">
-                <ul class="nav-links">
-                    <li><a href="index.html">Prancipal</a></li>
-                    <li><a href="Tutorial.html">Tutorial</a></li>
-                    <li><a href="about_us.html">About us</a></li>
-                    <li><a href="contact">Contact Us</a></li>
-                </ul>
-            </div>
-            
+            <ul class="nav-links">
+                <li><a href="index.html">Principal</a></li>
+                <li><a href="Tutorial.html">Tutorial</a></li>
+                <li><a href="about_us.html">About us</a></li>
+                <li><a href="contact_us.html">Contact Us</a></li>
+            </ul>  
         </div>
         <div class="header-content">
             <h1>Planet wars proyecto</h1>
@@ -53,7 +50,71 @@
     </header>
     
     <main>
+        <div class="title">
+            <h1>Tutorial</h1>
+        </div>
 
+        <section id="functioning" class="tutorial-content">
+            <h2>Menus</h2>
+            <div class="tutorial-box">
+                <img src="img/Menuprincipal.png" alt="Functioning" class="tutorial-image">
+                <div class="text-content">
+                    <h3>Main Menu</h3>
+                    <p>This is the main menu in which you can view all the contents of the game.
+                        We have 5 options in which each one does a different thing, which we will explain later.</p>
+                </div>
+            </div>
+        </section>
+        <section id="options" class="tutorial-content">
+            <h2>Options</h2>
+            <div class="tutorial-box">
+                <img src="img/stats.png" alt="Options" class="tutorial-image">
+                <div class="text-content">
+                    <h3>Option 1</h3>
+                    <p>If we go to option 1, we can see the statistics of our planet, which are very necessary when it comes to knowing the resources we have:</p><br>
+                    <ul>
+                        <li>We can see the level of technology of our defenses and our attack artillery.</li><br>
+                        <li>We can also see the defense units we have.</li> <br>
+                        <li>We also have attack units.</li><br>
+                        <li>And finally we have the resources that we currently have to be able to create units.</li><br>
+                    </ul>
+                </div>
+            </div>
+            <div class="tutorial-box" id="option2">
+                <img src="img/Option2.png" alt="Options" class="tutorial-image">
+                <img src="img/seleccion_unidades.png" alt="Hover Image 1" class="hover-image">
+                <img src="img/creacion_unidades.png" alt="Hover Image 2" class="hover-image">
+                <div class="text-content">
+                    <h3>Option 2</h3>
+                    <p>Option 2 will help us create troops, several menus will appear to be able to select the type of troops we want to create, we can choose between defense and attack.
+            
+                        Once we have selected the troop we want to create, we can choose how many units we want to create at a cost and if we do not have enough resources, we will get a message that we do not have enough resources.
+                        In the images, we can see the options.
+                    </p><br>
+                </div>
+            </div>
+            
+            <div class="tutorial-box">
+                <img src="img/option3.png" alt="Options" class="tutorial-image">
+                <div class="text-content">
+                    <h3>Option 3</h3>
+                    <p>Option 3, we can improve the technologies:</p>
+                    <ol>
+                        <li>We can see the level we currently have.</li>
+                        <li>We can see the cost of the upgrade and the total deuterium we currently have to upgrade our troops.</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="tutorial-box" id="option4">
+                <img src="img/Option4.png" alt="Options" class="tutorial-image">
+                <img src="img/batalla2.png" alt="Hover Image 1" class="hover-image">
+                <img src="img/batalla3.png" alt="Hover Image 2" class="hover-image">
+                <div class="text-content">
+                    <h3>Option 4</h3>
+                    <p>In option 4, we can see the battle between the planets and we will get the information about each planet, with its units. We will be able to see what is happening at all times and the battles last 3 minutes.</p><br>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
