@@ -1,16 +1,14 @@
 
 
 main {
-    max-width: 1200px;
-    margin: 20px auto;
+    margin: 0;
     padding: 20px;
     background: url('img/backg_main.avif') no-repeat center center/cover;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
 }
 
 main h1 {
-    color: #327dff;
+    color: #00d0ff;
     text-align: center;
 }
 main h2, h3 {
@@ -77,12 +75,14 @@ h3 {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    background-color: rgb(0, 0, 4, 0.65);
 }
 
 .tutorial-image {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
+    width: 362px;
 }
 
 .text-content {
@@ -92,6 +92,7 @@ h3 {
 
 p, ul, ol {
     margin: 10px 0;
+    color: bisque;
 }
 
 ul, ol {
@@ -109,4 +110,5 @@ ul, ol {
     height: auto;
     border-radius: 8px;
     margin-top: 10px;
+    width: 388px;
 }
