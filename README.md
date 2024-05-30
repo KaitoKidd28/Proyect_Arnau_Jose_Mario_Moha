@@ -1,1 +1,3 @@
-Aquí irá el readme.
+# PROJECTO FINAL AMWS1: PLANET WARS
+Primer proyecto
+
