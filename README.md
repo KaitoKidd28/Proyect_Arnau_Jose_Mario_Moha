@@ -10,13 +10,7 @@ Mario Pes
 
 ## Description
 
-Este proyecto consiste en crear un videojuego de gestión de recursos al mas puro estilo Civilization.
-
-En él, nos enfrentaremos al desafío de gestionar recursos, desarrollar tecnologías, construir edificios, y crear un ejercito.
-
-No todo será pacífico, ya que habrán enemigos que  intentarán conquistarnos, obligándonos a mantener nuestras defensas siempre listas para repeler estos ataques constantes. 
-
-Este juego de estrategia te permitirá demostrar tus habilidades de gestión y planificación para asegurar la supervivencia y el crecimiento de tu civilización.
+PlanetWars es un juego de estrategia en tiempo real ambientado en un vasto universo lleno de planetas por conquistar. Como comandante de tu propio imperio galáctico, tu misión es expandir tu dominio, gestionar recursos y liderar tu flota espacial hacia la victoria. El juego se juega en la terminal, ofreciendo una experiencia de juego pura y centrada en la estrategia, con desafíos que mantendrán a los jugadores inmersos en épicas batallas interplanetarias.
 
 ## Archivos
 
