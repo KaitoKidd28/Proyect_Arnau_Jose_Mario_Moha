@@ -32,6 +32,11 @@ Si no tiene Servidor de Oracle, a continuación se deja un video para hacer la i
 
 Para que todo sea más ameno, a continuación se dejan unos pasos para la puesta en marcha de todo:
 
+### 1. Configuración Base de Datos
+En los archivos descragardos, podemos navegar hasta la carpeta de M2, dónde ahí tenemos dos documentos sql:
+- En el llamado
+ 
+
 
 
 
